@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RHr-9u-8NH">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Panton-Regular.otf">
+            <string>Panton-Regular</string>
+            <string>Panton-Regular</string>
+        </mutableArray>
+        <mutableArray key="Panton-SemiBold.otf">
+            <string>Panton-SemiBold</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Song View Controller-->
+        <scene sceneID="3Wl-A6-oFs">
+            <objects>
+                <viewController id="RHr-9u-8NH" customClass="SongViewController" customModule="AirDJ" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZUR-Br-OgA"/>
+                        <viewControllerLayoutGuide type="bottom" id="2Md-6Y-eO2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9ag-PD-K2v">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GradientBackground" translatesAutoresizingMaskIntoConstraints="NO" id="IjK-ZM-SXf">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dreams" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kM-2x-Hxw" userLabel="Song Title Label">
+                                <rect key="frame" x="33" y="261" width="127" height="46"/>
+                                <fontDescription key="fontDescription" name="Panton-Regular" family="Panton" pointSize="38"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Katy Perry" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9b-eb-w1w" userLabel="Song Artist Label">
+                                <rect key="frame" x="33" y="311" width="88" height="23"/>
+                                <fontDescription key="fontDescription" name="Panton-Regular" family="Panton" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="0.75266575168918914" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ADB-b7-fsF">
+                                <rect key="frame" x="135" y="406" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ADB-b7-fsF" secondAttribute="height" multiplier="1:1" id="MqW-qx-U3b"/>
+                                    <constraint firstAttribute="width" constant="50" id="kvb-lk-1MP"/>
+                                </constraints>
+                                <state key="normal" image="Play">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playButtonTapped:" destination="RHr-9u-8NH" eventType="touchUpInside" id="8Rz-W9-ZDp"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LmF-Rj-kAZ">
+                                <rect key="frame" x="0.0" y="510" width="320" height="58"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make sync gesture" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X31-bf-YeV" userLabel="Info Label">
+                                        <rect key="frame" x="89" y="18" width="142" height="21"/>
+                                        <fontDescription key="fontDescription" name="Panton-SemiBold" family="Panton" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.47058823529411764" green="0.792156862745098" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="X31-bf-YeV" firstAttribute="centerY" secondItem="LmF-Rj-kAZ" secondAttribute="centerY" id="86q-ER-Hv8"/>
+                                    <constraint firstAttribute="height" constant="58" id="Ff1-bT-Pk7"/>
+                                    <constraint firstItem="X31-bf-YeV" firstAttribute="centerX" secondItem="LmF-Rj-kAZ" secondAttribute="centerX" id="G3W-IR-dUg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="IjK-ZM-SXf" secondAttribute="trailing" id="7QQ-HW-j0j"/>
+                            <constraint firstItem="IjK-ZM-SXf" firstAttribute="top" secondItem="9ag-PD-K2v" secondAttribute="top" id="C2d-5o-VJe"/>
+                            <constraint firstItem="IjK-ZM-SXf" firstAttribute="leading" secondItem="3kM-2x-Hxw" secondAttribute="trailing" constant="-160" id="Ir1-A1-Uve"/>
+                            <constraint firstItem="3kM-2x-Hxw" firstAttribute="leading" secondItem="P9b-eb-w1w" secondAttribute="leading" id="NyV-Or-zY8"/>
+                            <constraint firstItem="3kM-2x-Hxw" firstAttribute="centerY" secondItem="IjK-ZM-SXf" secondAttribute="centerY" id="Q01-mL-cRM"/>
+                            <constraint firstItem="LmF-Rj-kAZ" firstAttribute="bottom" secondItem="2Md-6Y-eO2" secondAttribute="top" id="epa-bM-Mnl"/>
+                            <constraint firstItem="ADB-b7-fsF" firstAttribute="top" secondItem="IjK-ZM-SXf" secondAttribute="bottom" constant="-162" id="hgK-dd-Sbj"/>
+                            <constraint firstItem="ADB-b7-fsF" firstAttribute="centerX" secondItem="IjK-ZM-SXf" secondAttribute="centerX" id="jzT-zB-kB4"/>
+                            <constraint firstItem="IjK-ZM-SXf" firstAttribute="bottom" secondItem="2Md-6Y-eO2" secondAttribute="top" id="mWo-Se-Bnw"/>
+                            <constraint firstItem="IjK-ZM-SXf" firstAttribute="leading" secondItem="3kM-2x-Hxw" secondAttribute="trailing" constant="-138" id="nzf-Oi-yGC"/>
+                            <constraint firstItem="IjK-ZM-SXf" firstAttribute="leading" secondItem="3kM-2x-Hxw" secondAttribute="trailing" constant="-138" id="oNb-iT-ONU"/>
+                            <constraint firstItem="P9b-eb-w1w" firstAttribute="top" secondItem="3kM-2x-Hxw" secondAttribute="bottom" constant="4" id="qVY-o1-rKh"/>
+                            <constraint firstItem="IjK-ZM-SXf" firstAttribute="leading" secondItem="9ag-PD-K2v" secondAttribute="leading" id="rLh-eP-6Lp"/>
+                            <constraint firstItem="LmF-Rj-kAZ" firstAttribute="trailing" secondItem="IjK-ZM-SXf" secondAttribute="trailing" id="ufP-Ad-nqi"/>
+                            <constraint firstItem="LmF-Rj-kAZ" firstAttribute="leading" secondItem="IjK-ZM-SXf" secondAttribute="leading" id="zNR-hE-04U"/>
+                            <constraint firstItem="LmF-Rj-kAZ" firstAttribute="top" secondItem="ADB-b7-fsF" secondAttribute="bottom" constant="54" id="zxh-4e-BXi"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="nzf-Oi-yGC"/>
+                                <exclude reference="oNb-iT-ONU"/>
+                                <exclude reference="hgK-dd-Sbj"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="playButton" destination="ADB-b7-fsF" id="knx-8n-NEz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hkk-cc-WJL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="277" y="268"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="GradientBackground" width="491" height="497"/>
+        <image name="Play" width="50" height="50"/>
+    </resources>
+</document>

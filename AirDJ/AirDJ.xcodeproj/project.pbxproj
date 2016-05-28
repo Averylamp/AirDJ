@@ -22,6 +22,9 @@
 		1B85C56F189E70E5006D6C3C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B85C56E189E70E5006D6C3C /* AudioToolbox.framework */; };
 		1B85C571189EA027006D6C3C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B85C570189EA027006D6C3C /* AVFoundation.framework */; };
 		1BADEA8F18DB892F001E9516 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BADEA8E18DB892F001E9516 /* Accelerate.framework */; };
+		2BF8628F1CFA366600A6D39E /* MyoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BF8628E1CFA366600A6D39E /* MyoKit.framework */; };
+		2BF862911CFA38B300A6D39E /* Song.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BF862901CFA38B300A6D39E /* Song.storyboard */; };
+		2BF862931CFA3F5F00A6D39E /* SongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF862921CFA3F5F00A6D39E /* SongViewController.swift */; };
 		BB1242C01A8FF19C0016B95C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB1242BE1A8FF19C0016B95C /* Main.storyboard */; };
 		BB249E7F1BD0C2DD00A9483D /* LevelsEdit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BB249E7E1BD0C2DD00A9483D /* LevelsEdit.mp3 */; };
 		BB5D7B301A901355003B839E /* 03 Don't Trust Me.m4a in Resources */ = {isa = PBXBuildFile; fileRef = BB5D7B2F1A901355003B839E /* 03 Don't Trust Me.m4a */; };
@@ -88,6 +91,9 @@
 		1B85C56E189E70E5006D6C3C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		1B85C570189EA027006D6C3C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1BADEA8E18DB892F001E9516 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		2BF8628E1CFA366600A6D39E /* MyoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MyoKit.framework; sourceTree = "<group>"; };
+		2BF862901CFA38B300A6D39E /* Song.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Song.storyboard; sourceTree = "<group>"; };
+		2BF862921CFA3F5F00A6D39E /* SongViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongViewController.swift; sourceTree = "<group>"; };
 		BB1242BF1A8FF19C0016B95C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BB249E7E1BD0C2DD00A9483D /* LevelsEdit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LevelsEdit.mp3; sourceTree = "<group>"; };
 		BB3AC96E1A8FC61300B42614 /* SuperpoweredBandpassFilterbank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperpoweredBandpassFilterbank.h; sourceTree = "<group>"; };
@@ -139,6 +145,7 @@
 				1B790D0418B5F5020041A145 /* MediaPlayer.framework in Frameworks */,
 				1B7D52FF18AB762800931EE7 /* QuartzCore.framework in Frameworks */,
 				1B85C53C189E6F20006D6C3C /* UIKit.framework in Frameworks */,
+				2BF8628F1CFA366600A6D39E /* MyoKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +175,7 @@
 		1B85C52B189E6F20006D6C3C = {
 			isa = PBXGroup;
 			children = (
+				2BF8628E1CFA366600A6D39E /* MyoKit.framework */,
 				1B2FF5E71A7AC32200E3F0CB /* Superpowered */,
 				1B85C53E189E6F20006D6C3C /* Supporting Files */,
 				1B0377E01A7ABDFB0094A776 /* AppDelegate.h */,
@@ -185,6 +193,8 @@
 				1B0377EC1A7ABE1B0094A776 /* fftTest.h */,
 				BB1242BE1A8FF19C0016B95C /* Main.storyboard */,
 				BB7FE58E1CFA389D0092A164 /* SongTableViewCell.swift */,
+				2BF862901CFA38B300A6D39E /* Song.storyboard */,
+				2BF862921CFA3F5F00A6D39E /* SongViewController.swift */,
 				BB7FE58C1CFA33120092A164 /* SettingsViewController.swift */,
 				BB5D7B391A903DF9003B839E /* RWGameData.h */,
 				BB5D7B3A1A903DF9003B839E /* RWGameData.m */,
@@ -354,6 +364,7 @@
 				BBD1DB1C1CFA263B00648559 /* Lato-Medium.ttf in Resources */,
 				BBD1DB041CFA25EE00648559 /* Panton-Black.otf in Resources */,
 				BBD1DB0A1CFA25EE00648559 /* Panton-Regular.otf in Resources */,
+				2BF862911CFA38B300A6D39E /* Song.storyboard in Resources */,
 				BBD1DB0B1CFA25EE00648559 /* Panton-SemiBold.otf in Resources */,
 				BBD1DB1B1CFA263B00648559 /* Lato-Light.ttf in Resources */,
 				1B0377EE1A7ABE250094A776 /* Images.xcassets in Resources */,
@@ -391,6 +402,7 @@
 				BBD1DAF11CFA244D00648559 /* ListViewController.swift in Sources */,
 				1B56C2251A7AC21200A649D2 /* main.m in Sources */,
 				BB7FE58F1CFA389D0092A164 /* SongTableViewCell.swift in Sources */,
+				2BF862931CFA3F5F00A6D39E /* SongViewController.swift in Sources */,
 				1B0377E41A7ABDFB0094A776 /* AppDelegate.m in Sources */,
 				BB7FE58D1CFA33120092A164 /* SettingsViewController.swift in Sources */,
 			);
@@ -491,6 +503,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_CW_ASM_SYNTAX = YES;
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
@@ -525,6 +541,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_CW_ASM_SYNTAX = YES;
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;

@@ -36,8 +36,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @IBAction func settingsClicked(sender: AnyObject) {
-        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        self.navigationController?.pushViewController(storyboard.instantiateViewControllerWithIdentifier("SettingsVC"), animated: true)
+//        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+//        self.navigationController?.pushViewController(storyboard.instantiateViewControllerWithIdentifier("SettingsVC"), animated: true)
+        
+        let controller = TLMSettingsViewController.settingsInNavigationController()
+        self.presentViewController(controller, animated: true, completion: nil)
     }
     
     // MARK: - TableView Data Source/ Delegate
@@ -45,9 +48,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("songCell") as! SongTableViewCell
         
@@ -91,10 +96,16 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 80
     }
+    
     func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 80
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let storyboard = UIStoryboard(name: "Song", bundle: nil)
+        let vc = storyboard.instantiateInitialViewController()
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
 
     /*
     // MARK: - Navigation
