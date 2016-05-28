@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1B85C533189E6F20006D6C3C"
                BuildableName = "AirDJ.app"
-               BlueprintName = "SuperpoweredPerformance"
+               BlueprintName = "AirDJ"
                ReferencedContainer = "container:AirDJ.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -34,7 +34,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1B85C533189E6F20006D6C3C"
             BuildableName = "AirDJ.app"
-            BlueprintName = "SuperpoweredPerformance"
+            BlueprintName = "AirDJ"
             ReferencedContainer = "container:AirDJ.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -57,7 +57,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1B85C533189E6F20006D6C3C"
             BuildableName = "AirDJ.app"
-            BlueprintName = "SuperpoweredPerformance"
+            BlueprintName = "AirDJ"
             ReferencedContainer = "container:AirDJ.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -76,7 +76,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1B85C533189E6F20006D6C3C"
             BuildableName = "AirDJ.app"
-            BlueprintName = "SuperpoweredPerformance"
+            BlueprintName = "AirDJ"
             ReferencedContainer = "container:AirDJ.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

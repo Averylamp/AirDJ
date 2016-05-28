@@ -296,9 +296,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1B85C533189E6F20006D6C3C /* SuperpoweredPerformance */ = {
+		1B85C533189E6F20006D6C3C /* AirDJ */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1B85C566189E6F20006D6C3C /* Build configuration list for PBXNativeTarget "SuperpoweredPerformance" */;
+			buildConfigurationList = 1B85C566189E6F20006D6C3C /* Build configuration list for PBXNativeTarget "AirDJ" */;
 			buildPhases = (
 				1B85C530189E6F20006D6C3C /* Sources */,
 				1B85C531189E6F20006D6C3C /* Frameworks */,
@@ -308,7 +308,7 @@
 			);
 			dependencies = (
 			);
-			name = SuperpoweredPerformance;
+			name = AirDJ;
 			productName = SuperpoweredPerformance;
 			productReference = 1B85C534189E6F20006D6C3C /* AirDJ.app */;
 			productType = "com.apple.product-type.application";
@@ -346,7 +346,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1B85C533189E6F20006D6C3C /* SuperpoweredPerformance */,
+				1B85C533189E6F20006D6C3C /* AirDJ */,
 			);
 		};
 /* End PBXProject section */
@@ -578,7 +578,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1B85C566189E6F20006D6C3C /* Build configuration list for PBXNativeTarget "SuperpoweredPerformance" */ = {
+		1B85C566189E6F20006D6C3C /* Build configuration list for PBXNativeTarget "AirDJ" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1B85C567189E6F20006D6C3C /* Debug */,
