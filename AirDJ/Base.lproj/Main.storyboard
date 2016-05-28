@@ -10,7 +10,12 @@
         <mutableArray key="MavenProLight-200.otf">
             <string>MavenProLight200-Regular</string>
         </mutableArray>
+        <mutableArray key="Panton-Light.otf">
+            <string>Panton-Light</string>
+        </mutableArray>
         <mutableArray key="Panton-Regular.otf">
+            <string>Panton-Regular</string>
+            <string>Panton-Regular</string>
             <string>Panton-Regular</string>
         </mutableArray>
     </customFonts>
@@ -40,10 +45,6 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vSw-Dr-D3Z">
-                                <rect key="frame" x="0.0" y="155" width="320" height="413"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Air DJ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTY-Sj-k7Y">
                                 <rect key="frame" x="0.0" y="20" width="320" height="50"/>
                                 <constraints>
@@ -59,11 +60,62 @@
                                     <constraint firstAttribute="width" constant="30" id="cxO-AD-8bv"/>
                                     <constraint firstAttribute="height" constant="30" id="ikY-hz-UGY"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="Settings"/>
+                                <state key="normal" title="Button" image="SettingsIcon"/>
                                 <connections>
                                     <action selector="settingsClicked:" destination="JI3-SA-Ehy" eventType="touchUpInside" id="ZF8-lv-i5P"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vSw-Dr-D3Z">
+                                <rect key="frame" x="0.0" y="155" width="320" height="413"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="songCell" rowHeight="80" id="B6y-6p-DDl" customClass="SongTableViewCell" customModule="AirDJ" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B6y-6p-DDl" id="WJJ-Zc-PdU">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Dreams" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="leG-db-2k1">
+                                                    <rect key="frame" x="58" y="18" width="184" height="24"/>
+                                                    <fontDescription key="fontDescription" name="Panton-Regular" family="Panton" pointSize="20"/>
+                                                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Katy Perry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0N-6R-2vN">
+                                                    <rect key="frame" x="58" y="47" width="184" height="19.5"/>
+                                                    <fontDescription key="fontDescription" name="Panton-Light" family="Panton" pointSize="16"/>
+                                                    <color key="textColor" red="0.29803921568627451" green="0.29803921568627451" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYe-5i-5dP">
+                                                    <rect key="frame" x="8" y="28" width="40" height="23"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="pz1-BW-cFb"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Panton-Regular" family="Panton" pointSize="19"/>
+                                                    <color key="textColor" red="0.0" green="0.792156862745098" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="IYe-5i-5dP" firstAttribute="centerY" secondItem="WJJ-Zc-PdU" secondAttribute="centerY" id="1Zb-EQ-ead"/>
+                                                <constraint firstItem="r0N-6R-2vN" firstAttribute="width" secondItem="leG-db-2k1" secondAttribute="width" id="8hI-Sm-yRm"/>
+                                                <constraint firstItem="leG-db-2k1" firstAttribute="leading" secondItem="WJJ-Zc-PdU" secondAttribute="leadingMargin" constant="50" id="AIB-92-g35"/>
+                                                <constraint firstItem="r0N-6R-2vN" firstAttribute="top" secondItem="leG-db-2k1" secondAttribute="bottom" constant="5" id="Vg5-Cm-fQc"/>
+                                                <constraint firstItem="leG-db-2k1" firstAttribute="top" secondItem="WJJ-Zc-PdU" secondAttribute="topMargin" constant="10" id="ZXe-rE-YQj"/>
+                                                <constraint firstItem="IYe-5i-5dP" firstAttribute="leading" secondItem="WJJ-Zc-PdU" secondAttribute="leadingMargin" id="nBl-2o-bTV"/>
+                                                <constraint firstItem="r0N-6R-2vN" firstAttribute="centerX" secondItem="leG-db-2k1" secondAttribute="centerX" id="zrg-tE-kFy"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="numberLabel" destination="IYe-5i-5dP" id="S7n-qD-sgJ"/>
+                                            <outlet property="songArtistLabel" destination="r0N-6R-2vN" id="AnO-EI-fL0"/>
+                                            <outlet property="songTitleLabel" destination="leG-db-2k1" id="jq7-HW-7cP"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -136,6 +188,6 @@
     </scenes>
     <resources>
         <image name="GradientBackground" width="491" height="497"/>
-        <image name="Settings" width="512" height="512"/>
+        <image name="SettingsIcon" width="512" height="512"/>
     </resources>
 </document>
