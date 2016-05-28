@@ -102,6 +102,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="infoLabel" destination="X31-bf-YeV" id="5iN-cJ-8zT"/>
                         <outlet property="playButton" destination="ADB-b7-fsF" id="knx-8n-NEz"/>
                     </connections>
                 </viewController>
