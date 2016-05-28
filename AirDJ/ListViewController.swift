@@ -49,11 +49,24 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         }else{
             cell.backgroundColor = UIColor(red: 0.941, green: 0.945, blue: 0.961, alpha: 1.00)
         }
+        
+        let numberLabel = UILabel(frame: CGRectMake(0,0, cell.frame.height, cell.frame.height))
+         numberLabel.textAlignment = .Center
+        numberLabel.text = "\(indexPath.row)"
+        numberLabel.textColor = UIColor(red: 0.173, green: 0.804, blue: 0.820, alpha: 1.00)
+        numberLabel.font = UIFont(name: "Panton-Regular", size: 40)
+        numberLabel.sizeToFit()
+        numberLabel.center = CGPointMake(cell.frame.height / 2 + 10, cell.frame.height / 2)
+        cell.addSubview(numberLabel)
+        
+        
+        
         return cell
     }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 80
     }
+    
 
     /*
     // MARK: - Navigation
