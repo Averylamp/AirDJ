@@ -12,6 +12,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     @IBOutlet weak var addSongButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var settingsButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = nil
+        tableView.separatorStyle = .None
         
 
         // Do any additional setup after loading the view.
@@ -29,9 +31,14 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func settingsClicked(sender: AnyObject) {
+        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        self.navigationController?.pushViewController(storyboard.instantiateViewControllerWithIdentifier("SettingsVC"), animated: true)
+    }
     
     // MARK: - TableView Data Source/ Delegate
     
@@ -52,18 +59,37 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let numberLabel = UILabel(frame: CGRectMake(0,0, cell.frame.height, cell.frame.height))
          numberLabel.textAlignment = .Center
-        numberLabel.text = "\(indexPath.row)"
+        numberLabel.text = "\(indexPath.row + 1)"
         numberLabel.textColor = UIColor(red: 0.173, green: 0.804, blue: 0.820, alpha: 1.00)
-        numberLabel.font = UIFont(name: "Panton-Regular", size: 40)
+        numberLabel.font = UIFont(name: "Panton-Regular", size: 24)
         numberLabel.sizeToFit()
-        numberLabel.center = CGPointMake(cell.frame.height / 2 + 10, cell.frame.height / 2)
+        numberLabel.center = CGPointMake(cell.frame.height / 2 + 10, 40)
+        print(cell.frame)
         cell.addSubview(numberLabel)
+        let labelOffset = numberLabel.frame.width + numberLabel.frame.origin.x + 30
+        let songTitleLabel = UILabel(frame: CGRectMake(labelOffset,10,cell.frame.width - labelOffset, 35 ))
+        songTitleLabel.text = "Dreams"
+        songTitleLabel.font = UIFont(name: "Panton-Regular", size: 20)
+        songTitleLabel.textColor = UIColor(white: 0.2, alpha: 1.0)
+        cell.addSubview(songTitleLabel)
         
-        
+        let songArtistLabel = UILabel(frame: CGRectMake(labelOffset, 35, cell.frame.width - labelOffset, 35))
+        songArtistLabel.text = "Katty Perry"
+        songArtistLabel.font = UIFont(name: "Panton-Light", size: 16)
+        songArtistLabel.textColor = UIColor(white: 0.3, alpha: 0.7)
+        cell.addSubview(songArtistLabel)
+//        cell.selectionStyle = .None
+        let backgroundSelected = UIView(frame: CGRectMake(0,0, cell.frame.width, 80))
+        backgroundSelected.backgroundColor = UIColor(red: 0.980, green: 0.867, blue: 0.553, alpha: 1.00)
+        cell.selectedBackgroundView = backgroundSelected
         
         return cell
     }
+    
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 80
+    }
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 80
     }
     

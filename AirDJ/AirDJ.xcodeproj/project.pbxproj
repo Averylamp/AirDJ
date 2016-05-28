@@ -27,6 +27,7 @@
 		BB5D7B301A901355003B839E /* 03 Don't Trust Me.m4a in Resources */ = {isa = PBXBuildFile; fileRef = BB5D7B2F1A901355003B839E /* 03 Don't Trust Me.m4a */; };
 		BB5D7B361A90191D003B839E /* 13 Sandstorm.m4a in Resources */ = {isa = PBXBuildFile; fileRef = BB5D7B351A90191D003B839E /* 13 Sandstorm.m4a */; };
 		BB5D7B3B1A903DF9003B839E /* RWGameData.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5D7B3A1A903DF9003B839E /* RWGameData.m */; };
+		BB7FE58D1CFA33120092A164 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7FE58C1CFA33120092A164 /* SettingsViewController.swift */; };
 		BBA4D21B1BAE9BEA004E4292 /* B.o.B - Airplanes, Part II [feat Eminem & Hayley Williams of Paramore] - Explicit Album Version.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BBA4D21A1BAE9BEA004E4292 /* B.o.B - Airplanes, Part II [feat Eminem & Hayley Williams of Paramore] - Explicit Album Version.mp3 */; };
 		BBA4D21D1BAE9CE5004E4292 /* 01 Levels - Radio Edit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BBA4D21C1BAE9CE5004E4292 /* 01 Levels - Radio Edit.mp3 */; };
 		BBD1DAF11CFA244D00648559 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD1DAF01CFA244D00648559 /* ListViewController.swift */; };
@@ -93,6 +94,7 @@
 		BB5D7B351A90191D003B839E /* 13 Sandstorm.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "13 Sandstorm.m4a"; sourceTree = "<group>"; };
 		BB5D7B391A903DF9003B839E /* RWGameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWGameData.h; sourceTree = "<group>"; };
 		BB5D7B3A1A903DF9003B839E /* RWGameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWGameData.m; sourceTree = "<group>"; };
+		BB7FE58C1CFA33120092A164 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		BBA4D21A1BAE9BEA004E4292 /* B.o.B - Airplanes, Part II [feat Eminem & Hayley Williams of Paramore] - Explicit Album Version.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "B.o.B - Airplanes, Part II [feat Eminem & Hayley Williams of Paramore] - Explicit Album Version.mp3"; sourceTree = "<group>"; };
 		BBA4D21C1BAE9CE5004E4292 /* 01 Levels - Radio Edit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "01 Levels - Radio Edit.mp3"; sourceTree = "<group>"; };
 		BBD1DAEF1CFA244D00648559 /* SuperpoweredPerformance-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SuperpoweredPerformance-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				1B0377E91A7ABE100094A776 /* Superpowered.mm */,
 				1B0377EC1A7ABE1B0094A776 /* fftTest.h */,
 				BB1242BE1A8FF19C0016B95C /* Main.storyboard */,
+				BB7FE58C1CFA33120092A164 /* SettingsViewController.swift */,
 				BB5D7B391A903DF9003B839E /* RWGameData.h */,
 				BB5D7B3A1A903DF9003B839E /* RWGameData.m */,
 				BBD1DB231CFA266500648559 /* Fonts */,
@@ -385,6 +388,7 @@
 				BBD1DAF11CFA244D00648559 /* ListViewController.swift in Sources */,
 				1B56C2251A7AC21200A649D2 /* main.m in Sources */,
 				1B0377E41A7ABDFB0094A776 /* AppDelegate.m in Sources */,
+				BB7FE58D1CFA33120092A164 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
