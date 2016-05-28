@@ -14,6 +14,7 @@ class SongViewController: UIViewController {
     @IBOutlet weak var infoLabel: UILabel!
     
     var musicIsPlaying = true
+    var armString = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,9 @@ class SongViewController: UIViewController {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didUnsyncArm), name: TLMMyoDidReceiveArmUnsyncEventNotification, object: nil)
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didReceiveOrientationEvent), name: TLMMyoDidReceiveOrientationEventNotification, object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didReceiveAccelerometerEvent), name: TLMMyoDidReceiveAccelerometerEventNotification, object: nil)
     }
     
     func didConnectDevice (notif: NSNotification) {
@@ -37,11 +41,21 @@ class SongViewController: UIViewController {
     }
     
     func didSyncArm (notif: NSNotification) {
-        
+        let armEvent = notif.userInfo![kTLMKeyArmSyncEvent] as! TLMArmSyncEvent
+        let armString = armEvent.arm == TLMArm.Right ? "Right" : "Left"
+        infoLabel.text = armString
     }
     
     func didUnsyncArm (notif: NSNotification) {
-        
+        infoLabel.text = "Perform the Sync Gesture"
+    }
+    
+    func didReceiveOrientationEvent (notif: NSNotification) {
+        let orientationEvent = notif.userInfo![kTLMKeyOrientationEvent] as! TLMOrientationEvent
+    }
+    
+    func didReceiveAccelerometerEvent (notif: NSNotification) {
+        let accelerometerEvent = notif.userInfo![kTLMKeyAccelerometerEvent] as! TLMOrientationEvent
     }
 
     @IBAction func playButtonTapped(sender: AnyObject) {
