@@ -63,32 +63,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.backgroundColor = UIColor(red: 0.941, green: 0.945, blue: 0.961, alpha: 1.00)
         }
         cell.numberLabel.text = "\(indexPath.row + 1)"
-        
-//        let numberLabel = UILabel(frame: CGRectMake(0,0, cell.frame.height, cell.frame.height))
-//         numberLabel.textAlignment = .Center
-//        numberLabel.text = "\(indexPath.row + 1)"
-//        numberLabel.textColor = UIColor(red: 0.173, green: 0.804, blue: 0.820, alpha: 1.00)
-//        numberLabel.font = UIFont(name: "Panton-Regular", size: 24)
-//        numberLabel.sizeToFit()
-//        numberLabel.center = CGPointMake(cell.frame.height / 2 + 10, 40)
-//        print(cell.frame)
-//        cell.addSubview(numberLabel)
-//        let labelOffset = numberLabel.frame.width + numberLabel.frame.origin.x + 30
-//        let songTitleLabel = UILabel(frame: CGRectMake(labelOffset,10,cell.frame.width - labelOffset, 35 ))
-//        songTitleLabel.text = "Dreams"
-//        songTitleLabel.font = UIFont(name: "Panton-Regular", size: 20)
-//        songTitleLabel.textColor = UIColor(white: 0.2, alpha: 1.0)
-//        cell.addSubview(songTitleLabel)
-//        
-//        let songArtistLabel = UILabel(frame: CGRectMake(labelOffset, 35, cell.frame.width - labelOffset, 35))
-//        songArtistLabel.text = "Katty Perry"
-//        songArtistLabel.font = UIFont(name: "Panton-Light", size: 16)
-//        songArtistLabel.textColor = UIColor(white: 0.3, alpha: 0.7)
-//        cell.addSubview(songArtistLabel)
-////        cell.selectionStyle = .None
-//        let backgroundSelected = UIView(frame: CGRectMake(0,0, cell.frame.width, 80))
-//        backgroundSelected.backgroundColor = UIColor(red: 0.980, green: 0.867, blue: 0.553, alpha: 1.00)
-//        cell.selectedBackgroundView = backgroundSelected
+        cell.songTitleLabel.text = "Dreams"
+        cell.songArtistLabel.text = "Katy Perry"
+        let backgroundSelected = UIView(frame: CGRectMake(0,0, cell.frame.width, 80))
+        backgroundSelected.backgroundColor = UIColor(red: 0.980, green: 0.867, blue: 0.553, alpha: 1.00)
+        cell.selectedBackgroundView = backgroundSelected
         
         return cell
     }
