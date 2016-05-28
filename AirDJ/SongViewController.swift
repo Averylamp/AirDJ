@@ -11,13 +11,37 @@ import UIKit
 class SongViewController: UIViewController {
 
     @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var infoLabel: UILabel!
     
     var musicIsPlaying = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didConnectDevice), name: TLMHubDidConnectDeviceNotification, object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didDisconnectDevice), name: TLMHubDidDisconnectDeviceNotification, object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didSyncArm), name: TLMMyoDidReceiveArmSyncEventNotification, object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didUnsyncArm), name: TLMMyoDidReceiveArmUnsyncEventNotification, object: nil)
+        
+    }
+    
+    func didConnectDevice (notif: NSNotification) {
+        infoLabel.text = "Perform the Sync Gesture"
+    }
+    
+    func didDisconnectDevice (notif: NSNotification) {
+        infoLabel.text = "Reconnect Myo"
+    }
+    
+    func didSyncArm (notif: NSNotification) {
+        
+    }
+    
+    func didUnsyncArm (notif: NSNotification) {
+        
     }
 
     @IBAction func playButtonTapped(sender: AnyObject) {
