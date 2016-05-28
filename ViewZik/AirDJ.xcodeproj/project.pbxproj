@@ -1,0 +1,565 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B0377DC1A7ABDDE0094A776 /* libSuperpoweredAudio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0377DB1A7ABDDE0094A776 /* libSuperpoweredAudio.a */; };
+		1B0377DF1A7ABDEA0094A776 /* SuperpoweredIOSAudioOutput.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1B0377DE1A7ABDEA0094A776 /* SuperpoweredIOSAudioOutput.mm */; };
+		1B0377E41A7ABDFB0094A776 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0377E11A7ABDFB0094A776 /* AppDelegate.m */; };
+		1B0377EA1A7ABE100094A776 /* CoreAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0377E71A7ABE100094A776 /* CoreAudio.m */; };
+		1B0377EB1A7ABE100094A776 /* Superpowered.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1B0377E91A7ABE100094A776 /* Superpowered.mm */; };
+		1B0377EE1A7ABE250094A776 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B0377ED1A7ABE250094A776 /* Images.xcassets */; };
+		1B56C2251A7AC21200A649D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B56C2241A7AC21200A649D2 /* main.m */; };
+		1B790D0418B5F5020041A145 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B790D0318B5F5020041A145 /* MediaPlayer.framework */; };
+		1B7D52FF18AB762800931EE7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B7D52FE18AB762800931EE7 /* QuartzCore.framework */; };
+		1B85C538189E6F20006D6C3C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B85C537189E6F20006D6C3C /* Foundation.framework */; };
+		1B85C53A189E6F20006D6C3C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B85C539189E6F20006D6C3C /* CoreGraphics.framework */; };
+		1B85C53C189E6F20006D6C3C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B85C53B189E6F20006D6C3C /* UIKit.framework */; };
+		1B85C56F189E70E5006D6C3C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B85C56E189E70E5006D6C3C /* AudioToolbox.framework */; };
+		1B85C571189EA027006D6C3C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B85C570189EA027006D6C3C /* AVFoundation.framework */; };
+		1BADEA8F18DB892F001E9516 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BADEA8E18DB892F001E9516 /* Accelerate.framework */; };
+		BB1242C01A8FF19C0016B95C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB1242BE1A8FF19C0016B95C /* Main.storyboard */; };
+		BB249E7F1BD0C2DD00A9483D /* LevelsEdit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BB249E7E1BD0C2DD00A9483D /* LevelsEdit.mp3 */; };
+		BB5D7B301A901355003B839E /* 03 Don't Trust Me.m4a in Resources */ = {isa = PBXBuildFile; fileRef = BB5D7B2F1A901355003B839E /* 03 Don't Trust Me.m4a */; };
+		BB5D7B361A90191D003B839E /* 13 Sandstorm.m4a in Resources */ = {isa = PBXBuildFile; fileRef = BB5D7B351A90191D003B839E /* 13 Sandstorm.m4a */; };
+		BB5D7B3B1A903DF9003B839E /* RWGameData.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5D7B3A1A903DF9003B839E /* RWGameData.m */; };
+		BBA4D21B1BAE9BEA004E4292 /* B.o.B - Airplanes, Part II [feat Eminem & Hayley Williams of Paramore] - Explicit Album Version.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BBA4D21A1BAE9BEA004E4292 /* B.o.B - Airplanes, Part II [feat Eminem & Hayley Williams of Paramore] - Explicit Album Version.mp3 */; };
+		BBA4D21D1BAE9CE5004E4292 /* 01 Levels - Radio Edit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BBA4D21C1BAE9CE5004E4292 /* 01 Levels - Radio Edit.mp3 */; };
+		BBD1DAF11CFA244D00648559 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD1DAF01CFA244D00648559 /* ListViewController.swift */; };
+		BBD1DB041CFA25EE00648559 /* Panton-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = BBD1DAFB1CFA25EE00648559 /* Panton-Black.otf */; };
+		BBD1DB051CFA25EE00648559 /* Panton-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BBD1DAFC1CFA25EE00648559 /* Panton-Bold.otf */; };
+		BBD1DB061CFA25EE00648559 /* Panton-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BBD1DAFD1CFA25EE00648559 /* Panton-ExtraBold.otf */; };
+		BBD1DB071CFA25EE00648559 /* Panton-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = BBD1DAFE1CFA25EE00648559 /* Panton-ExtraLight.otf */; };
+		BBD1DB081CFA25EE00648559 /* Panton-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = BBD1DAFF1CFA25EE00648559 /* Panton-Heavy.otf */; };
+		BBD1DB091CFA25EE00648559 /* Panton-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = BBD1DB001CFA25EE00648559 /* Panton-Light.otf */; };
+		BBD1DB0A1CFA25EE00648559 /* Panton-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BBD1DB011CFA25EE00648559 /* Panton-Regular.otf */; };
+		BBD1DB0B1CFA25EE00648559 /* Panton-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BBD1DB021CFA25EE00648559 /* Panton-SemiBold.otf */; };
+		BBD1DB0C1CFA25EE00648559 /* Panton-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = BBD1DB031CFA25EE00648559 /* Panton-Thin.otf */; };
+		BBD1DB171CFA263B00648559 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BBD1DB0E1CFA263B00648559 /* Lato-Black.ttf */; };
+		BBD1DB181CFA263B00648559 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BBD1DB0F1CFA263B00648559 /* Lato-Bold.ttf */; };
+		BBD1DB191CFA263B00648559 /* Lato-Hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BBD1DB101CFA263B00648559 /* Lato-Hairline.ttf */; };
+		BBD1DB1A1CFA263B00648559 /* Lato-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BBD1DB111CFA263B00648559 /* Lato-Heavy.ttf */; };
+		BBD1DB1B1CFA263B00648559 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BBD1DB121CFA263B00648559 /* Lato-Light.ttf */; };
+		BBD1DB1C1CFA263B00648559 /* Lato-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BBD1DB131CFA263B00648559 /* Lato-Medium.ttf */; };
+		BBD1DB1D1CFA263B00648559 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BBD1DB141CFA263B00648559 /* Lato-Regular.ttf */; };
+		BBD1DB1E1CFA263B00648559 /* Lato-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BBD1DB151CFA263B00648559 /* Lato-Semibold.ttf */; };
+		BBD1DB1F1CFA263B00648559 /* Lato-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BBD1DB161CFA263B00648559 /* Lato-Thin.ttf */; };
+		BBD1DB271CFA26F300648559 /* MavenProLight-100.otf in Resources */ = {isa = PBXBuildFile; fileRef = BBD1DAF51CFA25DA00648559 /* MavenProLight-100.otf */; };
+		BBD1DB281CFA26F300648559 /* MavenProLight-200.otf in Resources */ = {isa = PBXBuildFile; fileRef = BBD1DAF61CFA25DA00648559 /* MavenProLight-200.otf */; };
+		BBD1DB291CFA26F300648559 /* MavenProLight-300.otf in Resources */ = {isa = PBXBuildFile; fileRef = BBD1DAF71CFA25DA00648559 /* MavenProLight-300.otf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1B0377DB1A7ABDDE0094A776 /* libSuperpoweredAudio.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSuperpoweredAudio.a; path = ../Superpowered/libSuperpoweredAudio.a; sourceTree = "<group>"; };
+		1B0377DD1A7ABDEA0094A776 /* SuperpoweredIOSAudioOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SuperpoweredIOSAudioOutput.h; path = ../Superpowered/SuperpoweredIOSAudioOutput.h; sourceTree = "<group>"; };
+		1B0377DE1A7ABDEA0094A776 /* SuperpoweredIOSAudioOutput.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = SuperpoweredIOSAudioOutput.mm; path = ../Superpowered/SuperpoweredIOSAudioOutput.mm; sourceTree = "<group>"; };
+		1B0377E01A7ABDFB0094A776 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		1B0377E11A7ABDFB0094A776 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		1B0377E61A7ABE100094A776 /* CoreAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreAudio.h; sourceTree = "<group>"; };
+		1B0377E71A7ABE100094A776 /* CoreAudio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreAudio.m; sourceTree = "<group>"; };
+		1B0377E81A7ABE100094A776 /* Superpowered.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Superpowered.h; sourceTree = "<group>"; };
+		1B0377E91A7ABE100094A776 /* Superpowered.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Superpowered.mm; sourceTree = "<group>"; };
+		1B0377EC1A7ABE1B0094A776 /* fftTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fftTest.h; sourceTree = "<group>"; };
+		1B0377ED1A7ABE250094A776 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1B56C2241A7AC21200A649D2 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
+		1B56C2261A7AC27F00A649D2 /* SuperpoweredFlanger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SuperpoweredFlanger.h; path = ../Superpowered/SuperpoweredFlanger.h; sourceTree = "<group>"; };
+		1B56C2271A7AC27F00A649D2 /* SuperpoweredEcho.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SuperpoweredEcho.h; path = ../Superpowered/SuperpoweredEcho.h; sourceTree = "<group>"; };
+		1B56C2281A7AC27F00A649D2 /* SuperpoweredReverb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SuperpoweredReverb.h; path = ../Superpowered/SuperpoweredReverb.h; sourceTree = "<group>"; };
+		1B56C2291A7AC27F00A649D2 /* SuperpoweredFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SuperpoweredFilter.h; path = ../Superpowered/SuperpoweredFilter.h; sourceTree = "<group>"; };
+		1B56C22A1A7AC27F00A649D2 /* SuperpoweredAdvancedAudioPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SuperpoweredAdvancedAudioPlayer.h; path = ../Superpowered/SuperpoweredAdvancedAudioPlayer.h; sourceTree = "<group>"; };
+		1B56C22B1A7AC27F00A649D2 /* SuperpoweredRoll.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SuperpoweredRoll.h; path = ../Superpowered/SuperpoweredRoll.h; sourceTree = "<group>"; };
+		1B56C22C1A7AC27F00A649D2 /* Superpowered3BandEQ.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Superpowered3BandEQ.h; path = ../Superpowered/Superpowered3BandEQ.h; sourceTree = "<group>"; };
+		1B56C22D1A7AC28D00A649D2 /* SuperpoweredMixer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SuperpoweredMixer.h; path = ../Superpowered/SuperpoweredMixer.h; sourceTree = "<group>"; };
+		1B56C22E1A7AC29900A649D2 /* SuperpoweredFFT.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SuperpoweredFFT.h; path = ../Superpowered/SuperpoweredFFT.h; sourceTree = "<group>"; };
+		1B790D0318B5F5020041A145 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		1B7D52FE18AB762800931EE7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		1B85C534189E6F20006D6C3C /* AirDJ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirDJ.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B85C537189E6F20006D6C3C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1B85C539189E6F20006D6C3C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1B85C53B189E6F20006D6C3C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1B85C53F189E6F20006D6C3C /* SuperpoweredPerformance-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SuperpoweredPerformance-Info.plist"; sourceTree = "<group>"; };
+		1B85C545189E6F20006D6C3C /* SuperpoweredPerformance-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SuperpoweredPerformance-Prefix.pch"; sourceTree = "<group>"; };
+		1B85C56E189E70E5006D6C3C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		1B85C570189EA027006D6C3C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		1BADEA8E18DB892F001E9516 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		BB1242BF1A8FF19C0016B95C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BB249E7E1BD0C2DD00A9483D /* LevelsEdit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LevelsEdit.mp3; sourceTree = "<group>"; };
+		BB3AC96E1A8FC61300B42614 /* SuperpoweredBandpassFilterbank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperpoweredBandpassFilterbank.h; sourceTree = "<group>"; };
+		BB5D7B2F1A901355003B839E /* 03 Don't Trust Me.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "03 Don't Trust Me.m4a"; sourceTree = "<group>"; };
+		BB5D7B351A90191D003B839E /* 13 Sandstorm.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "13 Sandstorm.m4a"; sourceTree = "<group>"; };
+		BB5D7B391A903DF9003B839E /* RWGameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWGameData.h; sourceTree = "<group>"; };
+		BB5D7B3A1A903DF9003B839E /* RWGameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWGameData.m; sourceTree = "<group>"; };
+		BBA4D21A1BAE9BEA004E4292 /* B.o.B - Airplanes, Part II [feat Eminem & Hayley Williams of Paramore] - Explicit Album Version.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "B.o.B - Airplanes, Part II [feat Eminem & Hayley Williams of Paramore] - Explicit Album Version.mp3"; sourceTree = "<group>"; };
+		BBA4D21C1BAE9CE5004E4292 /* 01 Levels - Radio Edit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "01 Levels - Radio Edit.mp3"; sourceTree = "<group>"; };
+		BBD1DAEF1CFA244D00648559 /* SuperpoweredPerformance-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SuperpoweredPerformance-Bridging-Header.h"; sourceTree = "<group>"; };
+		BBD1DAF01CFA244D00648559 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		BBD1DAF51CFA25DA00648559 /* MavenProLight-100.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MavenProLight-100.otf"; sourceTree = "<group>"; };
+		BBD1DAF61CFA25DA00648559 /* MavenProLight-200.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MavenProLight-200.otf"; sourceTree = "<group>"; };
+		BBD1DAF71CFA25DA00648559 /* MavenProLight-300.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MavenProLight-300.otf"; sourceTree = "<group>"; };
+		BBD1DAFB1CFA25EE00648559 /* Panton-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Panton-Black.otf"; sourceTree = "<group>"; };
+		BBD1DAFC1CFA25EE00648559 /* Panton-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Panton-Bold.otf"; sourceTree = "<group>"; };
+		BBD1DAFD1CFA25EE00648559 /* Panton-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Panton-ExtraBold.otf"; sourceTree = "<group>"; };
+		BBD1DAFE1CFA25EE00648559 /* Panton-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Panton-ExtraLight.otf"; sourceTree = "<group>"; };
+		BBD1DAFF1CFA25EE00648559 /* Panton-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Panton-Heavy.otf"; sourceTree = "<group>"; };
+		BBD1DB001CFA25EE00648559 /* Panton-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Panton-Light.otf"; sourceTree = "<group>"; };
+		BBD1DB011CFA25EE00648559 /* Panton-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Panton-Regular.otf"; sourceTree = "<group>"; };
+		BBD1DB021CFA25EE00648559 /* Panton-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Panton-SemiBold.otf"; sourceTree = "<group>"; };
+		BBD1DB031CFA25EE00648559 /* Panton-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Panton-Thin.otf"; sourceTree = "<group>"; };
+		BBD1DB0E1CFA263B00648559 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
+		BBD1DB0F1CFA263B00648559 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		BBD1DB101CFA263B00648559 /* Lato-Hairline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Hairline.ttf"; sourceTree = "<group>"; };
+		BBD1DB111CFA263B00648559 /* Lato-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Heavy.ttf"; sourceTree = "<group>"; };
+		BBD1DB121CFA263B00648559 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		BBD1DB131CFA263B00648559 /* Lato-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Medium.ttf"; sourceTree = "<group>"; };
+		BBD1DB141CFA263B00648559 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		BBD1DB151CFA263B00648559 /* Lato-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Semibold.ttf"; sourceTree = "<group>"; };
+		BBD1DB161CFA263B00648559 /* Lato-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Thin.ttf"; sourceTree = "<group>"; };
+		BBD1DB201CFA264B00648559 /* ADAM.CG PRO.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ADAM.CG PRO.otf"; path = "Panton Font/ADAM.CG PRO.otf"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1B85C531189E6F20006D6C3C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B85C571189EA027006D6C3C /* AVFoundation.framework in Frameworks */,
+				1BADEA8F18DB892F001E9516 /* Accelerate.framework in Frameworks */,
+				1B85C56F189E70E5006D6C3C /* AudioToolbox.framework in Frameworks */,
+				1B85C53A189E6F20006D6C3C /* CoreGraphics.framework in Frameworks */,
+				1B0377DC1A7ABDDE0094A776 /* libSuperpoweredAudio.a in Frameworks */,
+				1B85C538189E6F20006D6C3C /* Foundation.framework in Frameworks */,
+				1B790D0418B5F5020041A145 /* MediaPlayer.framework in Frameworks */,
+				1B7D52FF18AB762800931EE7 /* QuartzCore.framework in Frameworks */,
+				1B85C53C189E6F20006D6C3C /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B2FF5E71A7AC32200E3F0CB /* Superpowered */ = {
+			isa = PBXGroup;
+			children = (
+				1B0377DB1A7ABDDE0094A776 /* libSuperpoweredAudio.a */,
+				BB3AC96E1A8FC61300B42614 /* SuperpoweredBandpassFilterbank.h */,
+				1B56C2261A7AC27F00A649D2 /* SuperpoweredFlanger.h */,
+				1B56C2271A7AC27F00A649D2 /* SuperpoweredEcho.h */,
+				1B56C2281A7AC27F00A649D2 /* SuperpoweredReverb.h */,
+				1B56C2291A7AC27F00A649D2 /* SuperpoweredFilter.h */,
+				1B56C22A1A7AC27F00A649D2 /* SuperpoweredAdvancedAudioPlayer.h */,
+				1B56C22B1A7AC27F00A649D2 /* SuperpoweredRoll.h */,
+				1B56C22C1A7AC27F00A649D2 /* Superpowered3BandEQ.h */,
+				1B56C22D1A7AC28D00A649D2 /* SuperpoweredMixer.h */,
+				1B56C22E1A7AC29900A649D2 /* SuperpoweredFFT.h */,
+				1B0377DD1A7ABDEA0094A776 /* SuperpoweredIOSAudioOutput.h */,
+				1B0377DE1A7ABDEA0094A776 /* SuperpoweredIOSAudioOutput.mm */,
+			);
+			name = Superpowered;
+			sourceTree = "<group>";
+		};
+		1B85C52B189E6F20006D6C3C = {
+			isa = PBXGroup;
+			children = (
+				1B2FF5E71A7AC32200E3F0CB /* Superpowered */,
+				1B85C53E189E6F20006D6C3C /* Supporting Files */,
+				1B0377E01A7ABDFB0094A776 /* AppDelegate.h */,
+				1B0377E11A7ABDFB0094A776 /* AppDelegate.m */,
+				BBD1DAF01CFA244D00648559 /* ListViewController.swift */,
+				BBA4D21A1BAE9BEA004E4292 /* B.o.B - Airplanes, Part II [feat Eminem & Hayley Williams of Paramore] - Explicit Album Version.mp3 */,
+				BB5D7B2F1A901355003B839E /* 03 Don't Trust Me.m4a */,
+				BB5D7B351A90191D003B839E /* 13 Sandstorm.m4a */,
+				BB249E7E1BD0C2DD00A9483D /* LevelsEdit.mp3 */,
+				BBA4D21C1BAE9CE5004E4292 /* 01 Levels - Radio Edit.mp3 */,
+				1B0377E61A7ABE100094A776 /* CoreAudio.h */,
+				1B0377E71A7ABE100094A776 /* CoreAudio.m */,
+				1B0377E81A7ABE100094A776 /* Superpowered.h */,
+				1B0377E91A7ABE100094A776 /* Superpowered.mm */,
+				1B0377EC1A7ABE1B0094A776 /* fftTest.h */,
+				BB1242BE1A8FF19C0016B95C /* Main.storyboard */,
+				BB5D7B391A903DF9003B839E /* RWGameData.h */,
+				BB5D7B3A1A903DF9003B839E /* RWGameData.m */,
+				BBD1DB231CFA266500648559 /* Fonts */,
+				1B0377ED1A7ABE250094A776 /* Images.xcassets */,
+				1B85C536189E6F20006D6C3C /* Frameworks */,
+				1B85C535189E6F20006D6C3C /* Products */,
+				BBD1DAEF1CFA244D00648559 /* SuperpoweredPerformance-Bridging-Header.h */,
+			);
+			sourceTree = "<group>";
+		};
+		1B85C535189E6F20006D6C3C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B85C534189E6F20006D6C3C /* AirDJ.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1B85C536189E6F20006D6C3C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1BADEA8E18DB892F001E9516 /* Accelerate.framework */,
+				1B85C56E189E70E5006D6C3C /* AudioToolbox.framework */,
+				1B85C570189EA027006D6C3C /* AVFoundation.framework */,
+				1B85C539189E6F20006D6C3C /* CoreGraphics.framework */,
+				1B85C537189E6F20006D6C3C /* Foundation.framework */,
+				1B790D0318B5F5020041A145 /* MediaPlayer.framework */,
+				1B7D52FE18AB762800931EE7 /* QuartzCore.framework */,
+				1B85C53B189E6F20006D6C3C /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1B85C53E189E6F20006D6C3C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1B56C2241A7AC21200A649D2 /* main.m */,
+				1B85C53F189E6F20006D6C3C /* SuperpoweredPerformance-Info.plist */,
+				1B85C545189E6F20006D6C3C /* SuperpoweredPerformance-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			path = SuperpoweredPerformance;
+			sourceTree = "<group>";
+		};
+		BBD1DAFA1CFA25EE00648559 /* Panton Font */ = {
+			isa = PBXGroup;
+			children = (
+				BBD1DAFB1CFA25EE00648559 /* Panton-Black.otf */,
+				BBD1DAFC1CFA25EE00648559 /* Panton-Bold.otf */,
+				BBD1DAFD1CFA25EE00648559 /* Panton-ExtraBold.otf */,
+				BBD1DAFE1CFA25EE00648559 /* Panton-ExtraLight.otf */,
+				BBD1DAFF1CFA25EE00648559 /* Panton-Heavy.otf */,
+				BBD1DB001CFA25EE00648559 /* Panton-Light.otf */,
+				BBD1DB011CFA25EE00648559 /* Panton-Regular.otf */,
+				BBD1DB021CFA25EE00648559 /* Panton-SemiBold.otf */,
+				BBD1DB031CFA25EE00648559 /* Panton-Thin.otf */,
+			);
+			path = "Panton Font";
+			sourceTree = "<group>";
+		};
+		BBD1DB0D1CFA263B00648559 /* Lato */ = {
+			isa = PBXGroup;
+			children = (
+				BBD1DB0E1CFA263B00648559 /* Lato-Black.ttf */,
+				BBD1DB0F1CFA263B00648559 /* Lato-Bold.ttf */,
+				BBD1DB101CFA263B00648559 /* Lato-Hairline.ttf */,
+				BBD1DB111CFA263B00648559 /* Lato-Heavy.ttf */,
+				BBD1DB121CFA263B00648559 /* Lato-Light.ttf */,
+				BBD1DB131CFA263B00648559 /* Lato-Medium.ttf */,
+				BBD1DB141CFA263B00648559 /* Lato-Regular.ttf */,
+				BBD1DB151CFA263B00648559 /* Lato-Semibold.ttf */,
+				BBD1DB161CFA263B00648559 /* Lato-Thin.ttf */,
+			);
+			path = Lato;
+			sourceTree = "<group>";
+		};
+		BBD1DB211CFA265300648559 /* MavenPro */ = {
+			isa = PBXGroup;
+			children = (
+				BBD1DAF51CFA25DA00648559 /* MavenProLight-100.otf */,
+				BBD1DAF61CFA25DA00648559 /* MavenProLight-200.otf */,
+				BBD1DAF71CFA25DA00648559 /* MavenProLight-300.otf */,
+			);
+			name = MavenPro;
+			sourceTree = "<group>";
+		};
+		BBD1DB231CFA266500648559 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				BBD1DB0D1CFA263B00648559 /* Lato */,
+				BBD1DB201CFA264B00648559 /* ADAM.CG PRO.otf */,
+				BBD1DAFA1CFA25EE00648559 /* Panton Font */,
+				BBD1DB211CFA265300648559 /* MavenPro */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1B85C533189E6F20006D6C3C /* SuperpoweredPerformance */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B85C566189E6F20006D6C3C /* Build configuration list for PBXNativeTarget "SuperpoweredPerformance" */;
+			buildPhases = (
+				1B85C530189E6F20006D6C3C /* Sources */,
+				1B85C531189E6F20006D6C3C /* Frameworks */,
+				1B85C532189E6F20006D6C3C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SuperpoweredPerformance;
+			productName = SuperpoweredPerformance;
+			productReference = 1B85C534189E6F20006D6C3C /* AirDJ.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1B85C52C189E6F20006D6C3C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = imect;
+				TargetAttributes = {
+					1B85C533189E6F20006D6C3C = {
+						DevelopmentTeam = 9XWYL3K4YT;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 1B85C52F189E6F20006D6C3C /* Build configuration list for PBXProject "AirDJ" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1B85C52B189E6F20006D6C3C;
+			productRefGroup = 1B85C535189E6F20006D6C3C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1B85C533189E6F20006D6C3C /* SuperpoweredPerformance */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1B85C532189E6F20006D6C3C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBD1DB1A1CFA263B00648559 /* Lato-Heavy.ttf in Resources */,
+				BB5D7B301A901355003B839E /* 03 Don't Trust Me.m4a in Resources */,
+				BBD1DB281CFA26F300648559 /* MavenProLight-200.otf in Resources */,
+				BBD1DB191CFA263B00648559 /* Lato-Hairline.ttf in Resources */,
+				BBD1DB291CFA26F300648559 /* MavenProLight-300.otf in Resources */,
+				BBD1DB1C1CFA263B00648559 /* Lato-Medium.ttf in Resources */,
+				BBD1DB041CFA25EE00648559 /* Panton-Black.otf in Resources */,
+				BBD1DB0A1CFA25EE00648559 /* Panton-Regular.otf in Resources */,
+				BBD1DB0B1CFA25EE00648559 /* Panton-SemiBold.otf in Resources */,
+				BBD1DB1B1CFA263B00648559 /* Lato-Light.ttf in Resources */,
+				1B0377EE1A7ABE250094A776 /* Images.xcassets in Resources */,
+				BBD1DB1D1CFA263B00648559 /* Lato-Regular.ttf in Resources */,
+				BBD1DB071CFA25EE00648559 /* Panton-ExtraLight.otf in Resources */,
+				BBD1DB0C1CFA25EE00648559 /* Panton-Thin.otf in Resources */,
+				BBD1DB181CFA263B00648559 /* Lato-Bold.ttf in Resources */,
+				BBA4D21D1BAE9CE5004E4292 /* 01 Levels - Radio Edit.mp3 in Resources */,
+				BBD1DB081CFA25EE00648559 /* Panton-Heavy.otf in Resources */,
+				BB1242C01A8FF19C0016B95C /* Main.storyboard in Resources */,
+				BB5D7B361A90191D003B839E /* 13 Sandstorm.m4a in Resources */,
+				BBD1DB1E1CFA263B00648559 /* Lato-Semibold.ttf in Resources */,
+				BBD1DB271CFA26F300648559 /* MavenProLight-100.otf in Resources */,
+				BBD1DB051CFA25EE00648559 /* Panton-Bold.otf in Resources */,
+				BBA4D21B1BAE9BEA004E4292 /* B.o.B - Airplanes, Part II [feat Eminem & Hayley Williams of Paramore] - Explicit Album Version.mp3 in Resources */,
+				BB249E7F1BD0C2DD00A9483D /* LevelsEdit.mp3 in Resources */,
+				BBD1DB091CFA25EE00648559 /* Panton-Light.otf in Resources */,
+				BBD1DB1F1CFA263B00648559 /* Lato-Thin.ttf in Resources */,
+				BBD1DB171CFA263B00648559 /* Lato-Black.ttf in Resources */,
+				BBD1DB061CFA25EE00648559 /* Panton-ExtraBold.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1B85C530189E6F20006D6C3C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B0377DF1A7ABDEA0094A776 /* SuperpoweredIOSAudioOutput.mm in Sources */,
+				1B0377EB1A7ABE100094A776 /* Superpowered.mm in Sources */,
+				1B0377EA1A7ABE100094A776 /* CoreAudio.m in Sources */,
+				BB5D7B3B1A903DF9003B839E /* RWGameData.m in Sources */,
+				BBD1DAF11CFA244D00648559 /* ListViewController.swift in Sources */,
+				1B56C2251A7AC21200A649D2 /* main.m in Sources */,
+				1B0377E41A7ABDFB0094A776 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BB1242BE1A8FF19C0016B95C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB1242BF1A8FF19C0016B95C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1B85C564189E6F20006D6C3C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1B85C565189E6F20006D6C3C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1B85C567189E6F20006D6C3C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				GCC_CW_ASM_SYNTAX = YES;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "SuperpoweredPerformance-Prefix.pch";
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				INFOPLIST_FILE = "SuperpoweredPerformance-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../Superpowered",
+				);
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = AirDJ;
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SuperpoweredPerformance-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALID_ARCHS = "armv7 i386 x86_64 arm64";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1B85C568189E6F20006D6C3C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				GCC_CW_ASM_SYNTAX = YES;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "SuperpoweredPerformance-Prefix.pch";
+				INFOPLIST_FILE = "SuperpoweredPerformance-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../Superpowered",
+				);
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = AirDJ;
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SuperpoweredPerformance-Bridging-Header.h";
+				VALID_ARCHS = "armv7 i386 x86_64 arm64";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1B85C52F189E6F20006D6C3C /* Build configuration list for PBXProject "AirDJ" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B85C564189E6F20006D6C3C /* Debug */,
+				1B85C565189E6F20006D6C3C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B85C566189E6F20006D6C3C /* Build configuration list for PBXNativeTarget "SuperpoweredPerformance" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B85C567189E6F20006D6C3C /* Debug */,
+				1B85C568189E6F20006D6C3C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1B85C52C189E6F20006D6C3C /* Project object */;
+}

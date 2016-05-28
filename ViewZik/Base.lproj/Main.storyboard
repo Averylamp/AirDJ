@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="JI3-SA-Ehy">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="MavenProLight-200.otf">
+            <string>MavenProLight200-Regular</string>
+        </mutableArray>
+        <mutableArray key="Panton-Regular.otf">
+            <string>Panton-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--List View Controller-->
+        <scene sceneID="mbd-f2-OKN">
+            <objects>
+                <viewController id="JI3-SA-Ehy" customClass="ListViewController" customModule="AirDJ" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Yje-Ee-OtO"/>
+                        <viewControllerLayoutGuide type="bottom" id="3ND-bP-eK8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lxi-8B-7j2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GradientBackground" translatesAutoresizingMaskIntoConstraints="NO" id="5G8-p8-6rX">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vSw-Dr-D3Z">
+                                <rect key="frame" x="0.0" y="180" width="320" height="388"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQA-xu-QUZ">
+                                <rect key="frame" x="48" y="105" width="224" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="d06-3q-ycH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Panton-Regular" family="Panton" pointSize="18"/>
+                                <state key="normal" title="ADD SONG">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play Queue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTY-Sj-k7Y">
+                                <rect key="frame" x="0.0" y="28" width="320" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="2fr-bW-xE5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MavenProLight200-Regular" family="Maven Pro Light" pointSize="33"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pTY-Sj-k7Y" firstAttribute="width" secondItem="lxi-8B-7j2" secondAttribute="width" id="0Qt-jS-SEv"/>
+                            <constraint firstItem="vSw-Dr-D3Z" firstAttribute="width" secondItem="lxi-8B-7j2" secondAttribute="width" id="4A2-6D-EYm"/>
+                            <constraint firstItem="vSw-Dr-D3Z" firstAttribute="centerX" secondItem="lxi-8B-7j2" secondAttribute="centerX" id="6a5-mK-OO4"/>
+                            <constraint firstItem="5G8-p8-6rX" firstAttribute="centerX" secondItem="lxi-8B-7j2" secondAttribute="centerX" id="Ces-3G-qo3"/>
+                            <constraint firstItem="pTY-Sj-k7Y" firstAttribute="top" secondItem="Yje-Ee-OtO" secondAttribute="bottom" constant="8" id="D1f-XD-GUh"/>
+                            <constraint firstItem="HQA-xu-QUZ" firstAttribute="top" secondItem="pTY-Sj-k7Y" secondAttribute="bottom" constant="30" id="HOO-bv-9RT"/>
+                            <constraint firstItem="HQA-xu-QUZ" firstAttribute="centerX" secondItem="lxi-8B-7j2" secondAttribute="centerX" id="KcG-8q-8rJ"/>
+                            <constraint firstItem="3ND-bP-eK8" firstAttribute="top" secondItem="vSw-Dr-D3Z" secondAttribute="bottom" id="Qbe-JB-sE0"/>
+                            <constraint firstItem="pTY-Sj-k7Y" firstAttribute="centerX" secondItem="lxi-8B-7j2" secondAttribute="centerX" id="RlK-D1-BTb"/>
+                            <constraint firstItem="5G8-p8-6rX" firstAttribute="width" secondItem="lxi-8B-7j2" secondAttribute="width" id="TYL-cw-gxi"/>
+                            <constraint firstItem="HQA-xu-QUZ" firstAttribute="width" secondItem="lxi-8B-7j2" secondAttribute="width" multiplier="0.7" id="lFI-cR-ZeJ"/>
+                            <constraint firstItem="5G8-p8-6rX" firstAttribute="centerY" secondItem="lxi-8B-7j2" secondAttribute="centerY" id="qTE-KA-kom"/>
+                            <constraint firstItem="5G8-p8-6rX" firstAttribute="height" secondItem="lxi-8B-7j2" secondAttribute="height" id="qZR-I2-iBi"/>
+                            <constraint firstItem="vSw-Dr-D3Z" firstAttribute="top" secondItem="HQA-xu-QUZ" secondAttribute="bottom" constant="30" id="zD5-zu-fKD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addSongButton" destination="HQA-xu-QUZ" id="Zwx-hy-ftK"/>
+                        <outlet property="tableView" destination="vSw-Dr-D3Z" id="eUA-fS-zbi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tds-1m-tKQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="46" y="49"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="GradientBackground" width="491" height="497"/>
+    </resources>
+</document>

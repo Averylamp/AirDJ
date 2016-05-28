@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "235478DA735925AB064E5418D3C1C114867F6864",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "30FCF99C086323FD85AE1A9C80FCAA5F60472E08" : 0,
+    "235478DA735925AB064E5418D3C1C114867F6864" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "7A3290DB-1E64-4C7B-BDF0-C3819E8AF1F5",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "30FCF99C086323FD85AE1A9C80FCAA5F60472E08" : "",
+    "235478DA735925AB064E5418D3C1C114867F6864" : "ViewZikFinal"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ViewZik",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ViewZik\/ViewZik.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/averylamp\/viewzikfinal.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "235478DA735925AB064E5418D3C1C114867F6864"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/averylamp\/galagagame.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "30FCF99C086323FD85AE1A9C80FCAA5F60472E08"
+    }
+  ]
+}
