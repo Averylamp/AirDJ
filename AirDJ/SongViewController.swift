@@ -30,6 +30,8 @@ class SongViewController: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didReceiveOrientationEvent), name: TLMMyoDidReceiveOrientationEventNotification, object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didReceiveAccelerometerEvent), name: TLMMyoDidReceiveAccelerometerEventNotification, object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didReceivePoseChange), name: TLMMyoDidReceivePoseChangedNotification, object: nil)
     }
     
     func didConnectDevice (notif: NSNotification) {
@@ -42,7 +44,7 @@ class SongViewController: UIViewController {
     
     func didSyncArm (notif: NSNotification) {
         let armEvent = notif.userInfo![kTLMKeyArmSyncEvent] as! TLMArmSyncEvent
-        let armString = armEvent.arm == TLMArm.Right ? "Right" : "Left"
+        let armString = armEvent.arm == .Right ? "Right" : "Left"
         infoLabel.text = armString
     }
     
@@ -55,7 +57,27 @@ class SongViewController: UIViewController {
     }
     
     func didReceiveAccelerometerEvent (notif: NSNotification) {
-        let accelerometerEvent = notif.userInfo![kTLMKeyAccelerometerEvent] as! TLMOrientationEvent
+        let accelerometerEvent = notif.userInfo![kTLMKeyAccelerometerEvent] as! TLMAccelerometerEvent
+        let vector = accelerometerEvent.vector
+        infoLabel.text = "x: \(vector.x), y: \(vector.y), z: \(vector.z)"
+    }
+    
+    func didReceivePoseChange (notif: NSNotification) {
+        let pose = notif.userInfo![kTLMKeyPose] as! TLMPose
+        switch (pose.type) {
+            case TLMPoseType.Unknown, TLMPoseType.Rest:
+                break;
+            case TLMPoseType.DoubleTap:
+                break;
+            case TLMPoseType.Fist:
+                break;
+            case TLMPoseType.WaveIn:
+                break;
+            case TLMPoseType.WaveOut:
+                break;
+            case TLMPoseType.FingersSpread:
+                break;
+        }
     }
 
     @IBAction func playButtonTapped(sender: AnyObject) {
