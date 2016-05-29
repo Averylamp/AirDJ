@@ -19,6 +19,15 @@ class SongViewController: UIViewController {
     @IBOutlet weak var artistNameLabel: UILabel!
     @IBOutlet weak var progressView: UIProgressView!
     
+    @IBOutlet weak var flangerButton: UIButton!
+    @IBOutlet weak var loopButton: UIButton!
+    @IBOutlet weak var bassBoostButton: UIButton!
+    @IBOutlet weak var phaserButton: UIButton!
+    @IBOutlet weak var timeShiftButton: UIButton!
+    @IBOutlet weak var reverbButton: UIButton!
+    
+    var toggleButtons = Array<UIButton>()
+    
     var musicIsPlaying = true
     var armString = ""
     var currentPose: TLMPose?
@@ -26,6 +35,22 @@ class SongViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        toggleButtons.append(flangerButton)
+        toggleButtons.append(loopButton)
+        toggleButtons.append(bassBoostButton)
+        toggleButtons.append(phaserButton)
+        toggleButtons.append(timeShiftButton)
+        toggleButtons.append(reverbButton)
+        toggleButtons.forEach {
+            $0.layer.cornerRadius = 15
+            $0.layer.borderColor = UIColor(white: 1.0, alpha: 0.7).CGColor
+            $0.layer.borderWidth = 1.0
+            $0.clipsToBounds = true
+            $0.adjustsImageWhenHighlighted = false
+            $0.setTitleColor(UIColor.blackColor(), forState: .Selected)
+            $0.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        }
+        
         progressView.trackTintColor = UIColor(white: 0.7, alpha: 0.4)
         
         forwardButton.setImage(UIImage(named: "Fast Forward"), forState: .Highlighted)
@@ -77,7 +102,12 @@ class SongViewController: UIViewController {
     
     func didSyncArm (notif: NSNotification) {
         let armEvent = notif.userInfo![kTLMKeyArmSyncEvent] as! TLMArmSyncEvent
-        let armString = armEvent.arm == .Right ? "Right" : "Left"
+        var armString = ""
+        if armEvent.arm == .Right {
+            armString = "Right"
+        }else{
+            armString = "Left"
+        }
         infoLabel.text = armString
     }
     
@@ -125,18 +155,23 @@ class SongViewController: UIViewController {
                 currentPoseString = "Rest"
                 break;
             case .DoubleTap:
+                flangerTriggered(UIView())
                 currentPoseString = "DoubleTap"
                 break;
             case .Fist:
                 currentPoseString = "Fist"
+                playButtonTapped(UIButton)
                 break;
             case .WaveIn:
                 currentPoseString = "WaveIn"
+                rewindButtonClicked(UIButton)
                 break;
             case .WaveOut:
                 currentPoseString = "WaveOut"
+                forwardButtonClicked(UIButton)
                 break;
             case .FingersSpread:
+                loopTriggered(UIView())
                 currentPoseString = "Spread"
                 break;
         }
@@ -162,11 +197,25 @@ class SongViewController: UIViewController {
     }
     
     @IBAction func forwardButtonClicked(sender: AnyObject) {
-        
+        forwardButton.highlighted = true
+        delay(0.4) { 
+            self.forwardButton.highlighted = false
+        }
+        superPowered?.seekTo(min(superPowered!.positionPercent() + 0.02, 1.0))
+        print("fast forward")
     }
     
     
-    @IBOutlet weak var rewindButtonClicked: UIButton!
+    
+    @IBAction func rewindButtonClicked(sender: AnyObject) {
+        backwardButton.highlighted = true
+        delay(0.4) { 
+            self.backwardButton.highlighted = false
+        }
+        superPowered?.seekTo(max(superPowered!.positionPercent() - 0.02, 0.0))
+        print("fast forward")
+    }
+    
     
     func frameUpdate(){
         
@@ -202,18 +251,94 @@ class SongViewController: UIViewController {
             endPath.contractionFactor = 0.7
             endPath.moveToPoint(points[i].first!)
             endPath.addBezierThrough(points[i])
-            
-            
             let animation = CABasicAnimation(keyPath: "path")
             animation.fromValue = waveforms[i]
             animation.toValue = endPath.CGPath
             animation.duration = 3.0 / 60.0
             waveforms[i].path = endPath.CGPath
             waveforms[i].addAnimation(animation, forKey: "waveAnimation")
-            
         }
     }
     
+    // MARK: - Effects
+    // 6 is reverb
+    //
+    
+    
+    @IBAction func flangerTriggered(sender: AnyObject) {
+        print("Flanger Triggered")
+        superPowered?.toggleFx(5)
+        flangerButton.selected = !flangerButton.selected
+        if flangerButton.selected {
+            flangerButton.backgroundColor = UIColor(white: 1.0, alpha: 0.7)
+        }else{
+            flangerButton.backgroundColor = nil
+        }
+    }
+    
+    @IBAction func loopTriggered(sender: AnyObject) {
+        print("Loop Triggered")
+        superPowered?.toggleFx(2)
+        loopButton.selected = !loopButton.selected
+        if loopButton.selected {
+            loopButton.backgroundColor = UIColor(white: 1.0, alpha: 0.7)
+        }else{
+            loopButton.backgroundColor = nil
+        }
+    }
+    
+    @IBAction func bassBoostTriggered(sender: AnyObject) {
+        print("Bass Boost Triggered")
+        superPowered?.toggleFx(4)
+        bassBoostButton.selected = !bassBoostButton.selected
+        if bassBoostButton.selected {
+            bassBoostButton.backgroundColor = UIColor(white: 1.0, alpha: 0.7)
+        }else{
+            bassBoostButton.backgroundColor = nil
+        }
+    }
+    
+    @IBAction func phaserTriggered(sender: AnyObject) {
+        print("Phaser Triggered")
+        superPowered?.toggleFx(3)
+        phaserButton.selected = !phaserButton.selected
+        if phaserButton.selected {
+            phaserButton.backgroundColor = UIColor(white: 1.0, alpha: 0.7)
+        }else{
+            phaserButton.backgroundColor = nil
+        }
+    }
+    
+    @IBAction func timeShiftTriggered(sender: AnyObject) {
+        print("Time Shift Triggered")
+        superPowered?.toggleFx(0)
+        timeShiftButton.selected = !timeShiftButton.selected
+        if timeShiftButton.selected {
+            timeShiftButton.backgroundColor = UIColor(white: 1.0, alpha: 0.7)
+        }else{
+            timeShiftButton.backgroundColor = nil
+        }
+    }
+    
+    @IBAction func pitchShiftTriggered(sender: AnyObject) {
+        print("Pitch Shift Triggered")
+        superPowered?.toggleFx(6)
+        reverbButton.selected = !reverbButton.selected
+        if reverbButton.selected {
+            reverbButton.backgroundColor = UIColor(white: 1.0, alpha: 0.7)
+        }else{
+            reverbButton.backgroundColor = nil
+        }
+    }
+    
+    func delay(delay:Double, closure:()->()) {
+        dispatch_after(
+            dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(delay * Double(NSEC_PER_SEC))
+            ),
+            dispatch_get_main_queue(), closure)
+    }
     
     
         /*

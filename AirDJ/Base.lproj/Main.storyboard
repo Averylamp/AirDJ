@@ -59,7 +59,7 @@
                                     <constraint firstAttribute="width" constant="30" id="cxO-AD-8bv"/>
                                     <constraint firstAttribute="height" constant="30" id="ikY-hz-UGY"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="SettingsIcon"/>
+                                <state key="normal" image="Settings Filled-50"/>
                                 <connections>
                                     <action selector="settingsClicked:" destination="JI3-SA-Ehy" eventType="touchUpInside" id="ZF8-lv-i5P"/>
                                 </connections>
@@ -81,8 +81,8 @@
                                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Katy Perry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0N-6R-2vN">
-                                                    <rect key="frame" x="58" y="47" width="184" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Katy Perry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0N-6R-2vN">
+                                                    <rect key="frame" x="58" y="47" width="73.5" height="20"/>
                                                     <fontDescription key="fontDescription" name="Panton-Light" family="Panton" pointSize="16"/>
                                                     <color key="textColor" red="0.29803921568627451" green="0.29803921568627451" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -187,6 +187,6 @@
     </scenes>
     <resources>
         <image name="GradientBackground" width="491" height="497"/>
-        <image name="SettingsIcon" width="512" height="512"/>
+        <image name="Settings Filled-50" width="50" height="50"/>
     </resources>
 </document>

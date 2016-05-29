@@ -7,6 +7,14 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="MavenProLight-300.otf">
+            <string>MavenProLight300-Regular</string>
+            <string>MavenProLight300-Regular</string>
+            <string>MavenProLight300-Regular</string>
+            <string>MavenProLight300-Regular</string>
+            <string>MavenProLight300-Regular</string>
+            <string>MavenProLight300-Regular</string>
+        </mutableArray>
         <mutableArray key="Panton-Regular.otf">
             <string>Panton-Regular</string>
             <string>Panton-Regular</string>
@@ -29,13 +37,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dreams" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="3kM-2x-Hxw" userLabel="Song Title Label">
-                                <rect key="frame" x="26" y="261" width="278" height="46"/>
+                                <rect key="frame" x="26" y="211" width="278" height="46"/>
                                 <fontDescription key="fontDescription" name="Panton-Regular" family="Panton" pointSize="38"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Katy Perry" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="P9b-eb-w1w" userLabel="Song Artist Label">
-                                <rect key="frame" x="26" y="311" width="278" height="23"/>
+                                <rect key="frame" x="26" y="261" width="278" height="23"/>
                                 <fontDescription key="fontDescription" name="Panton-Regular" family="Panton" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="0.75266575168918914" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -56,8 +64,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LmF-Rj-kAZ">
                                 <rect key="frame" x="0.0" y="510" width="320" height="58"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Make sync gesture" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X31-bf-YeV" userLabel="Info Label">
-                                        <rect key="frame" x="89" y="18" width="142" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make sync gesture" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X31-bf-YeV" userLabel="Info Label">
+                                        <rect key="frame" x="73" y="18.5" width="174" height="20"/>
                                         <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -91,44 +99,146 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyB-nt-tVF">
                                 <rect key="frame" x="70" y="406" width="50" height="50"/>
                                 <state key="normal" image="Rewind Filled"/>
+                                <connections>
+                                    <action selector="rewindButtonClicked:" destination="RHr-9u-8NH" eventType="touchUpInside" id="i6Z-Qh-53L"/>
+                                </connections>
                             </button>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yge-52-9ed">
                                 <rect key="frame" x="32" y="476" width="256" height="2"/>
                                 <color key="progressTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="trackTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tAi-tz-nnu">
+                                <rect key="frame" x="21" y="304" width="86" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="GRZ-c3-fyo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MavenProLight300-Regular" family="Maven Pro Light" pointSize="17"/>
+                                <state key="normal" title="Flanger">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="flangerTriggered:" destination="RHr-9u-8NH" eventType="touchUpInside" id="ccK-GR-3ji"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQ6-ae-Eq5">
+                                <rect key="frame" x="213" y="304" width="86" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="a8I-Tm-mzG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MavenProLight300-Regular" family="Maven Pro Light" pointSize="17"/>
+                                <state key="normal" title="Bass Boost">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="bassBoostTriggered:" destination="RHr-9u-8NH" eventType="touchUpInside" id="28T-me-xVP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1V-iA-RsU">
+                                <rect key="frame" x="21" y="349" width="86" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="quv-Xa-ERc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MavenProLight300-Regular" family="Maven Pro Light" pointSize="17"/>
+                                <state key="normal" title="Phaser">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="phaserTriggered:" destination="RHr-9u-8NH" eventType="touchUpInside" id="uXM-hZ-Uk3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XfP-46-fmy">
+                                <rect key="frame" x="117" y="349" width="86" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="eom-9U-PWe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MavenProLight300-Regular" family="Maven Pro Light" pointSize="17"/>
+                                <state key="normal" title="Time Shift">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="timeShiftTriggered:" destination="RHr-9u-8NH" eventType="touchUpInside" id="MrI-kC-ytM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YRS-NO-4uD">
+                                <rect key="frame" x="213" y="349" width="86" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="1zt-Ux-NvP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MavenProLight300-Regular" family="Maven Pro Light" pointSize="17"/>
+                                <state key="normal" title="Reverb">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pitchShiftTriggered:" destination="RHr-9u-8NH" eventType="touchUpInside" id="8nX-f9-lqK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fW0-2r-Bi1">
+                                <rect key="frame" x="117" y="304" width="86" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="3Ef-07-lDH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MavenProLight300-Regular" family="Maven Pro Light" pointSize="17"/>
+                                <state key="normal" title="Loop">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loopTriggered:" destination="RHr-9u-8NH" eventType="touchUpInside" id="xUb-af-mVg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="XfP-46-fmy" firstAttribute="width" secondItem="IjK-ZM-SXf" secondAttribute="width" multiplier="0.27" id="3A1-BY-8yS"/>
+                            <constraint firstItem="YRS-NO-4uD" firstAttribute="centerX" secondItem="IjK-ZM-SXf" secondAttribute="centerX" multiplier="1.6" id="3iv-9b-A6I"/>
                             <constraint firstItem="ws0-SJ-eTg" firstAttribute="centerY" secondItem="ADB-b7-fsF" secondAttribute="centerY" id="6Lh-6k-K5C"/>
                             <constraint firstAttribute="trailing" secondItem="IjK-ZM-SXf" secondAttribute="trailing" id="7QQ-HW-j0j"/>
+                            <constraint firstItem="XfP-46-fmy" firstAttribute="centerX" secondItem="IjK-ZM-SXf" secondAttribute="centerX" id="7cb-ah-SfN"/>
                             <constraint firstItem="Nwf-eX-HdF" firstAttribute="top" secondItem="ZUR-Br-OgA" secondAttribute="bottom" id="9mR-cV-ivp"/>
                             <constraint firstItem="IjK-ZM-SXf" firstAttribute="top" secondItem="9ag-PD-K2v" secondAttribute="top" id="C2d-5o-VJe"/>
+                            <constraint firstItem="YRS-NO-4uD" firstAttribute="width" secondItem="IjK-ZM-SXf" secondAttribute="width" multiplier="0.27" id="DFu-nn-g01"/>
                             <constraint firstItem="ws0-SJ-eTg" firstAttribute="leading" secondItem="ADB-b7-fsF" secondAttribute="trailing" constant="15" id="GiM-JN-nAm"/>
                             <constraint firstItem="IjK-ZM-SXf" firstAttribute="leading" secondItem="3kM-2x-Hxw" secondAttribute="trailing" constant="-160" id="Ir1-A1-Uve"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3kM-2x-Hxw" secondAttribute="trailing" id="JBj-pI-Mnd"/>
                             <constraint firstItem="3kM-2x-Hxw" firstAttribute="leading" secondItem="P9b-eb-w1w" secondAttribute="leading" id="NyV-Or-zY8"/>
+                            <constraint firstItem="V1V-iA-RsU" firstAttribute="centerX" secondItem="9ag-PD-K2v" secondAttribute="centerX" multiplier="0.4" id="O8e-vE-2Yj"/>
                             <constraint firstItem="yge-52-9ed" firstAttribute="centerX" secondItem="9ag-PD-K2v" secondAttribute="centerX" id="OD4-ni-3jP"/>
-                            <constraint firstItem="3kM-2x-Hxw" firstAttribute="centerY" secondItem="IjK-ZM-SXf" secondAttribute="centerY" id="Q01-mL-cRM"/>
+                            <constraint firstItem="3kM-2x-Hxw" firstAttribute="centerY" secondItem="IjK-ZM-SXf" secondAttribute="centerY" constant="-50" id="Q01-mL-cRM"/>
                             <constraint firstItem="ws0-SJ-eTg" firstAttribute="width" secondItem="ADB-b7-fsF" secondAttribute="width" id="Wci-ff-pxn"/>
+                            <constraint firstItem="tAi-tz-nnu" firstAttribute="top" secondItem="P9b-eb-w1w" secondAttribute="bottom" constant="20" id="Y5U-Ux-8uC"/>
                             <constraint firstItem="Nwf-eX-HdF" firstAttribute="leading" secondItem="9ag-PD-K2v" secondAttribute="leadingMargin" id="YFj-wd-3YJ"/>
+                            <constraint firstItem="tAi-tz-nnu" firstAttribute="centerX" secondItem="9ag-PD-K2v" secondAttribute="centerX" multiplier="0.4" id="bCZ-Ya-H0w"/>
                             <constraint firstItem="yge-52-9ed" firstAttribute="top" secondItem="fyB-nt-tVF" secondAttribute="bottom" constant="20" id="bTw-PF-9pm"/>
+                            <constraint firstItem="V1V-iA-RsU" firstAttribute="width" secondItem="IjK-ZM-SXf" secondAttribute="width" multiplier="0.27" id="cB8-Ac-P8N"/>
+                            <constraint firstItem="YRS-NO-4uD" firstAttribute="centerY" secondItem="XfP-46-fmy" secondAttribute="centerY" id="dJy-6S-AJ4"/>
+                            <constraint firstItem="YRS-NO-4uD" firstAttribute="centerY" secondItem="XfP-46-fmy" secondAttribute="centerY" id="dRO-Nd-48R"/>
                             <constraint firstItem="LmF-Rj-kAZ" firstAttribute="bottom" secondItem="2Md-6Y-eO2" secondAttribute="top" id="epa-bM-Mnl"/>
                             <constraint firstItem="fyB-nt-tVF" firstAttribute="width" secondItem="ADB-b7-fsF" secondAttribute="width" id="eyR-PU-Bg1"/>
+                            <constraint firstItem="dQ6-ae-Eq5" firstAttribute="width" secondItem="IjK-ZM-SXf" secondAttribute="width" multiplier="0.27" id="feO-TE-94p"/>
                             <constraint firstItem="fyB-nt-tVF" firstAttribute="centerY" secondItem="ADB-b7-fsF" secondAttribute="centerY" id="gDm-ox-fi1"/>
                             <constraint firstItem="ADB-b7-fsF" firstAttribute="top" secondItem="IjK-ZM-SXf" secondAttribute="bottom" constant="-162" id="hgK-dd-Sbj"/>
                             <constraint firstItem="ADB-b7-fsF" firstAttribute="centerX" secondItem="IjK-ZM-SXf" secondAttribute="centerX" id="jzT-zB-kB4"/>
+                            <constraint firstItem="fW0-2r-Bi1" firstAttribute="centerX" secondItem="9ag-PD-K2v" secondAttribute="centerX" id="lej-YI-UU0"/>
+                            <constraint firstItem="fW0-2r-Bi1" firstAttribute="centerY" secondItem="tAi-tz-nnu" secondAttribute="centerY" id="mRW-Tc-AxG"/>
                             <constraint firstItem="IjK-ZM-SXf" firstAttribute="bottom" secondItem="2Md-6Y-eO2" secondAttribute="top" id="mWo-Se-Bnw"/>
+                            <constraint firstItem="dQ6-ae-Eq5" firstAttribute="centerX" secondItem="9ag-PD-K2v" secondAttribute="centerX" multiplier="1.6" id="mip-At-YMU"/>
                             <constraint firstItem="IjK-ZM-SXf" firstAttribute="leading" secondItem="3kM-2x-Hxw" secondAttribute="trailing" constant="-138" id="nzf-Oi-yGC"/>
                             <constraint firstItem="IjK-ZM-SXf" firstAttribute="leading" secondItem="3kM-2x-Hxw" secondAttribute="trailing" constant="-138" id="oNb-iT-ONU"/>
+                            <constraint firstItem="tAi-tz-nnu" firstAttribute="width" secondItem="IjK-ZM-SXf" secondAttribute="width" multiplier="0.27" id="oZB-9v-fvE"/>
                             <constraint firstItem="ADB-b7-fsF" firstAttribute="leading" secondItem="fyB-nt-tVF" secondAttribute="trailing" constant="15" id="poI-cA-Z89"/>
                             <constraint firstItem="P9b-eb-w1w" firstAttribute="top" secondItem="3kM-2x-Hxw" secondAttribute="bottom" constant="4" id="qVY-o1-rKh"/>
+                            <constraint firstItem="dQ6-ae-Eq5" firstAttribute="centerY" secondItem="fW0-2r-Bi1" secondAttribute="centerY" id="qcd-PD-6sE"/>
+                            <constraint firstItem="V1V-iA-RsU" firstAttribute="centerY" secondItem="XfP-46-fmy" secondAttribute="centerY" id="qqC-QV-bh2"/>
                             <constraint firstItem="IjK-ZM-SXf" firstAttribute="leading" secondItem="9ag-PD-K2v" secondAttribute="leading" id="rLh-eP-6Lp"/>
+                            <constraint firstItem="V1V-iA-RsU" firstAttribute="top" secondItem="tAi-tz-nnu" secondAttribute="bottom" constant="10" id="rRI-sA-XUn"/>
+                            <constraint firstItem="XfP-46-fmy" firstAttribute="centerY" secondItem="V1V-iA-RsU" secondAttribute="centerY" id="rcB-Ly-mxY"/>
                             <constraint firstItem="yge-52-9ed" firstAttribute="width" secondItem="9ag-PD-K2v" secondAttribute="width" multiplier="0.8" id="rnj-d4-QSj"/>
                             <constraint firstItem="LmF-Rj-kAZ" firstAttribute="trailing" secondItem="IjK-ZM-SXf" secondAttribute="trailing" id="ufP-Ad-nqi"/>
                             <constraint firstItem="3kM-2x-Hxw" firstAttribute="leading" secondItem="9ag-PD-K2v" secondAttribute="leadingMargin" constant="10" id="umY-hW-8M3"/>
                             <constraint firstItem="fyB-nt-tVF" firstAttribute="height" secondItem="ADB-b7-fsF" secondAttribute="height" id="vjD-hs-cpQ"/>
+                            <constraint firstItem="fW0-2r-Bi1" firstAttribute="width" secondItem="IjK-ZM-SXf" secondAttribute="width" multiplier="0.27" id="xKn-H8-2Nk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="P9b-eb-w1w" secondAttribute="trailing" id="xSW-VV-3WA"/>
+                            <constraint firstItem="V1V-iA-RsU" firstAttribute="centerY" secondItem="YRS-NO-4uD" secondAttribute="centerY" id="xio-e8-Tez"/>
                             <constraint firstItem="LmF-Rj-kAZ" firstAttribute="leading" secondItem="IjK-ZM-SXf" secondAttribute="leading" id="zNR-hE-04U"/>
                             <constraint firstItem="ws0-SJ-eTg" firstAttribute="height" secondItem="ADB-b7-fsF" secondAttribute="height" id="zgp-Pv-hFZ"/>
                             <constraint firstItem="LmF-Rj-kAZ" firstAttribute="top" secondItem="ADB-b7-fsF" secondAttribute="bottom" constant="54" id="zxh-4e-BXi"/>
@@ -138,7 +248,10 @@
                                 <exclude reference="Ir1-A1-Uve"/>
                                 <exclude reference="nzf-Oi-yGC"/>
                                 <exclude reference="oNb-iT-ONU"/>
+                                <exclude reference="rcB-Ly-mxY"/>
                                 <exclude reference="hgK-dd-Sbj"/>
+                                <exclude reference="dJy-6S-AJ4"/>
+                                <exclude reference="dRO-Nd-48R"/>
                             </mask>
                         </variation>
                     </view>
@@ -146,12 +259,17 @@
                     <connections>
                         <outlet property="artistNameLabel" destination="P9b-eb-w1w" id="sqP-8N-QBw"/>
                         <outlet property="backwardButton" destination="fyB-nt-tVF" id="ZVp-g1-b99"/>
+                        <outlet property="bassBoostButton" destination="dQ6-ae-Eq5" id="hdf-dD-4TV"/>
+                        <outlet property="flangerButton" destination="tAi-tz-nnu" id="Uq5-Qa-6GY"/>
                         <outlet property="forwardButton" destination="ws0-SJ-eTg" id="Ffk-ro-DbS"/>
                         <outlet property="infoLabel" destination="X31-bf-YeV" id="5iN-cJ-8zT"/>
+                        <outlet property="loopButton" destination="fW0-2r-Bi1" id="FCz-ix-hYe"/>
+                        <outlet property="phaserButton" destination="V1V-iA-RsU" id="0fC-hu-nE6"/>
                         <outlet property="playButton" destination="ADB-b7-fsF" id="knx-8n-NEz"/>
                         <outlet property="progressView" destination="yge-52-9ed" id="Vxl-hc-kDg"/>
-                        <outlet property="rewindButtonClicked" destination="fyB-nt-tVF" id="UOL-w2-YIf"/>
+                        <outlet property="reverbButton" destination="YRS-NO-4uD" id="JiI-0A-0cC"/>
                         <outlet property="songTitleLabel" destination="3kM-2x-Hxw" id="WGt-da-ld0"/>
+                        <outlet property="timeShiftButton" destination="XfP-46-fmy" id="INk-IK-J8w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hkk-cc-WJL" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -57,11 +57,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("songCell") as! SongTableViewCell
         
-        cell.backgroundColor = nil
+        cell.contentView.backgroundColor = nil
         if indexPath.row % 2 == 0{
-            cell.backgroundColor = UIColor.whiteColor()
+            cell.contentView.backgroundColor = UIColor.whiteColor()
         }else{
-            cell.backgroundColor = UIColor(red: 0.941, green: 0.945, blue: 0.961, alpha: 1.00)
+            cell.contentView.backgroundColor = UIColor(red: 0.941, green: 0.945, blue: 0.961, alpha: 1.00)
         }
         cell.numberLabel.text = "\(indexPath.row + 1)"
         
