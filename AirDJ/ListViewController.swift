@@ -64,8 +64,42 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.backgroundColor = UIColor(red: 0.941, green: 0.945, blue: 0.961, alpha: 1.00)
         }
         cell.numberLabel.text = "\(indexPath.row + 1)"
-        cell.songTitleLabel.text = "Dreams"
-        cell.songArtistLabel.text = "Katy Perry"
+        
+        switch indexPath.row {
+        case 0:
+            cell.songTitleLabel.text = "Levels"
+            cell.songArtistLabel.text = "Avicii"
+        case 1:
+            cell.songTitleLabel.text = "Airplanes, Part II"
+            cell.songArtistLabel.text = "B.o.B feat Eminem"
+        case 2:
+            cell.songTitleLabel.text = "Sandstorm"
+            cell.songArtistLabel.text = "Darude"
+        case 3:
+            cell.songTitleLabel.text = "Falling (Wheathin Remix)"
+            cell.songArtistLabel.text = "Opia"
+        case 4:
+            cell.songTitleLabel.text = "Show Me Love (Big Wild Remix)"
+            cell.songArtistLabel.text = "Hundred Waters"
+        case 5:
+            cell.songTitleLabel.text = "Mr. Watson (BKAYE Remix)"
+            cell.songArtistLabel.text = "Cruel Youth"
+        case 6:
+            cell.songTitleLabel.text = "Dreams"
+            cell.songArtistLabel.text = "Joakim Karud"
+        case 7:
+            cell.songTitleLabel.text = "Gekko"
+            cell.songArtistLabel.text = "Oliver Heldens"
+        case 8:
+            cell.songTitleLabel.text = "You & Me"
+            cell.songArtistLabel.text = "Flume"
+        case 9:
+            cell.songTitleLabel.text = "Some"
+            cell.songArtistLabel.text = "Ahn Jung Jae & Sungha Jung"
+        default:
+            cell.songTitleLabel.text = "Gekko"
+            cell.songArtistLabel.text = "Oliver Heldens"
+        }
         let backgroundSelected = UIView(frame: CGRectMake(0,0, cell.frame.width, 80))
         backgroundSelected.backgroundColor = UIColor(red: 0.980, green: 0.867, blue: 0.553, alpha: 1.00)
         cell.selectedBackgroundView = backgroundSelected
@@ -81,15 +115,53 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         return 80
     }
     
+    var selectedIndex:NSIndexPath? = nil
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if selectedIndex != nil {
+            
+            print("Song already picked")
+        }
+        selectedIndex = indexPath
         if superPoweredMusic == nil {
             superPoweredMusic = Superpowered()
-            superPoweredMusic?.addSongWithName("LevelsEdit", fileType: "mp3")
+            switch indexPath.row {
+            case 0:
+                superPoweredMusic?.addSongWithName("01 Levels - Radio Edit", fileType: "mp3")
+            case 1:
+                superPoweredMusic?.addSongWithName("B.o.B - Airplanes, Part II [feat Eminem & Hayley Williams of Paramore] - Explicit Album Version", fileType: "mp3")
+            case 2:
+                superPoweredMusic?.addSongWithName("13 Sandstorm", fileType: "m4a")
+            case 3:
+                superPoweredMusic?.addSongWithName("Falling", fileType: "wav")
+            case 4:
+                superPoweredMusic?.addSongWithName("Hundred Waters - Show Me Love (Big Wild Remix)", fileType: "mp3")
+            case 5:
+                superPoweredMusic?.addSongWithName("Cruel Youth - Mr. Watson (BKAYE Remix)", fileType: "mp3")
+            case 6:
+                superPoweredMusic?.addSongWithName("Dreams", fileType: "mp3")
+            case 7:
+                superPoweredMusic?.addSongWithName("Oliver Heldens - Gecko _Original Mix_", fileType: "mp3")
+            case 8:
+                superPoweredMusic?.addSongWithName("Flume - You & Me - Flume Remix", fileType: "mp3")
+            case 9:
+                superPoweredMusic?.addSongWithName("-(Some) - Ahn Jung Jae & Sungha Jung", fileType: "mp3")
+                
+            default:
+                superPoweredMusic?.addSongWithName("Oliver Heldens - Gecko _Original Mix_", fileType: "mp3")
+            }
+            
+            
+            
             superPoweredMusic?.toggle()
         }
         
         let storyboard = UIStoryboard(name: "Song", bundle: nil)
         let vc = storyboard.instantiateInitialViewController() as!SongViewController
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as? SongTableViewCell
+        vc.view.frame = vc.view.frame
+        vc.songTitleLabel.text = cell?.songTitleLabel.text
+        vc.artistNameLabel.text = cell?.songArtistLabel.text
         vc.superPowered = self.superPoweredMusic
         self.navigationController?.pushViewController(vc, animated: true)
     }

@@ -13,6 +13,9 @@ class SongViewController: UIViewController {
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var infoLabel: UILabel!
     
+    @IBOutlet weak var songTitleLabel: UILabel!
+    @IBOutlet weak var artistNameLabel: UILabel!
+    
     var musicIsPlaying = true
     var armString = ""
     
@@ -53,9 +56,6 @@ class SongViewController: UIViewController {
     }
     
     var waveforms = Array<CAShapeLayer>()
-    var waveform1 = CAShapeLayer()
-    var waveform2 = CAShapeLayer()
-    var waveform3 = CAShapeLayer()
     
     func didConnectDevice (notif: NSNotification) {
         infoLabel.text = "Perform the Sync Gesture"
@@ -144,7 +144,7 @@ class SongViewController: UIViewController {
             return
         }
         
-        var scaleFactor = 1000.0
+        let scaleFactor = 1000.0
         var scaledFrequencies = Array<Double>()
         for num in frequencies! {
             scaledFrequencies.append(Double(num as! NSNumber) * scaleFactor)
@@ -162,22 +162,7 @@ class SongViewController: UIViewController {
             }
             points.append(pointArr)
         }
-//        
-//        var firstPoints = Array<CGPoint>()
-//        for i in 0..<allPoints.count{
-//            firstPoints.append(CGPointMake(self.view.frame.width * CGFloat(i) / CGFloat(allPoints.count - 1), CGFloat(scaledFrequencies[i ])))
-//        }
-//        
-//        var secondPoints = Array<CGPoint>()
-//        for i in 0...11{
-//            secondPoints.append(CGPointMake(self.view.frame.width * CGFloat(i) / CGFloat(5), CGFloat(scaledFrequencies[i + 10])))
-//        }
-//        
-//        var thirdPoints = Array<CGPoint>()
-//        for i in 0...11{
-//            thirdPoints.append(CGPointMake(self.view.frame.width * CGFloat(i) / CGFloat(5), CGFloat(scaledFrequencies[i + 20])))
-//        }
-//
+
         for i in 0..<waveforms.count{
             let endPath = UIBezierPath()
             endPath.contractionFactor = 0.7
@@ -185,7 +170,7 @@ class SongViewController: UIViewController {
             endPath.addBezierThrough(points[i])
             
             
-            var animation = CABasicAnimation(keyPath: "path")
+            let animation = CABasicAnimation(keyPath: "path")
             animation.fromValue = waveforms[i]
             animation.toValue = endPath.CGPath
             animation.duration = 3.0 / 60.0
@@ -193,66 +178,9 @@ class SongViewController: UIViewController {
             waveforms[i].addAnimation(animation, forKey: "waveAnimation")
             
         }
-
-//        let endPath2 = UIBezierPath()
-//        endPath2.contractionFactor = 0.7
-//        endPath2.moveToPoint(secondPoints.first!)
-//        endPath2.addBezierThrough(secondPoints)
-//        
-//        animation = CABasicAnimation(keyPath: "path")
-//        animation.fromValue = waveform2.path
-//        animation.toValue = endPath2.CGPath
-//        animation.duration = 3.0 / 60.0
-//        waveform2.path = endPath2.CGPath
-//        waveform2.addAnimation(animation, forKey: "waveAnimation")
-//        
-//        let endPath3 = UIBezierPath()
-//        endPath3.contractionFactor = 0.7
-//        endPath3.moveToPoint(thirdPoints.first!)
-//        endPath3.addBezierThrough(thirdPoints)
-//        
-//        animation = CABasicAnimation(keyPath: "path")
-//        animation.fromValue = waveform3.path
-//        animation.toValue = endPath3.CGPath
-//        animation.duration = 3.0 / 60.0
-//        waveform3.path = endPath3.CGPath
-//        waveform3.addAnimation(animation, forKey: "waveAnimation")
-
     }
     
-    
-    
-    func quadCurvedPath(points: Array<CGPoint>) -> UIBezierPath {
-        let path = UIBezierPath()
-        
-        var p1 = points[0]
-        path.moveToPoint(p1)
-        for i in 1..<points.count {
-            let p2 = points[i]
-            let midPoint = midpointOfPoints(p1, secondPoint: p2)
-            path.addQuadCurveToPoint(midPoint, controlPoint: controlPointForPoints(p1, p2: midPoint))
-            path.addQuadCurveToPoint(p2, controlPoint: controlPointForPoints(midPoint, p2: p2))
-            p1 = p2
-        }
-        return path
-        
-    }
-    
-    private func midpointOfPoints(firstPoint: CGPoint, secondPoint:CGPoint)->CGPoint{
-        return CGPointMake((firstPoint.x + secondPoint.x) / 2, (firstPoint.y + secondPoint.y) / 2)
-    }
-    
-    private func controlPointForPoints(p1: CGPoint, p2: CGPoint)-> CGPoint{
-        var controlPoint = midpointOfPoints(p1, secondPoint: p2)
-        let diffy = abs((p2.y - controlPoint.y))
-        if p1.y < p2.y {
-            controlPoint.y += diffy
-        }else if p1.y > p2.y{
-            controlPoint.y  -= diffy
-        }
-        return controlPoint
-    }
-    /*
+        /*
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RHr-9u-8NH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RHr-9u-8NH">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -27,16 +27,10 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GradientBackground" translatesAutoresizingMaskIntoConstraints="NO" id="IjK-ZM-SXf">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dreams" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kM-2x-Hxw" userLabel="Song Title Label">
-                                <rect key="frame" x="33" y="261" width="127" height="46"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dreams" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="3kM-2x-Hxw" userLabel="Song Title Label">
+                                <rect key="frame" x="26" y="261" width="278" height="46"/>
                                 <fontDescription key="fontDescription" name="Panton-Regular" family="Panton" pointSize="38"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Katy Perry" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9b-eb-w1w" userLabel="Song Artist Label">
-                                <rect key="frame" x="33" y="311" width="88" height="23"/>
-                                <fontDescription key="fontDescription" name="Panton-Regular" family="Panton" pointSize="19"/>
-                                <color key="textColor" white="1" alpha="0.75266575168918914" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ADB-b7-fsF">
@@ -80,6 +74,12 @@
                                     <action selector="backButtonClicked:" destination="RHr-9u-8NH" eventType="touchUpInside" id="VVw-sw-mbj"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Katy Perry" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="P9b-eb-w1w" userLabel="Song Artist Label">
+                                <rect key="frame" x="26" y="311" width="278" height="23"/>
+                                <fontDescription key="fontDescription" name="Panton-Regular" family="Panton" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="0.75266575168918914" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -87,6 +87,7 @@
                             <constraint firstItem="Nwf-eX-HdF" firstAttribute="top" secondItem="ZUR-Br-OgA" secondAttribute="bottom" id="9mR-cV-ivp"/>
                             <constraint firstItem="IjK-ZM-SXf" firstAttribute="top" secondItem="9ag-PD-K2v" secondAttribute="top" id="C2d-5o-VJe"/>
                             <constraint firstItem="IjK-ZM-SXf" firstAttribute="leading" secondItem="3kM-2x-Hxw" secondAttribute="trailing" constant="-160" id="Ir1-A1-Uve"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3kM-2x-Hxw" secondAttribute="trailing" id="JBj-pI-Mnd"/>
                             <constraint firstItem="3kM-2x-Hxw" firstAttribute="leading" secondItem="P9b-eb-w1w" secondAttribute="leading" id="NyV-Or-zY8"/>
                             <constraint firstItem="3kM-2x-Hxw" firstAttribute="centerY" secondItem="IjK-ZM-SXf" secondAttribute="centerY" id="Q01-mL-cRM"/>
                             <constraint firstItem="Nwf-eX-HdF" firstAttribute="leading" secondItem="9ag-PD-K2v" secondAttribute="leadingMargin" id="YFj-wd-3YJ"/>
@@ -99,11 +100,14 @@
                             <constraint firstItem="P9b-eb-w1w" firstAttribute="top" secondItem="3kM-2x-Hxw" secondAttribute="bottom" constant="4" id="qVY-o1-rKh"/>
                             <constraint firstItem="IjK-ZM-SXf" firstAttribute="leading" secondItem="9ag-PD-K2v" secondAttribute="leading" id="rLh-eP-6Lp"/>
                             <constraint firstItem="LmF-Rj-kAZ" firstAttribute="trailing" secondItem="IjK-ZM-SXf" secondAttribute="trailing" id="ufP-Ad-nqi"/>
+                            <constraint firstItem="3kM-2x-Hxw" firstAttribute="leading" secondItem="9ag-PD-K2v" secondAttribute="leadingMargin" constant="10" id="umY-hW-8M3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="P9b-eb-w1w" secondAttribute="trailing" id="xSW-VV-3WA"/>
                             <constraint firstItem="LmF-Rj-kAZ" firstAttribute="leading" secondItem="IjK-ZM-SXf" secondAttribute="leading" id="zNR-hE-04U"/>
                             <constraint firstItem="LmF-Rj-kAZ" firstAttribute="top" secondItem="ADB-b7-fsF" secondAttribute="bottom" constant="54" id="zxh-4e-BXi"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="Ir1-A1-Uve"/>
                                 <exclude reference="nzf-Oi-yGC"/>
                                 <exclude reference="oNb-iT-ONU"/>
                                 <exclude reference="hgK-dd-Sbj"/>
@@ -112,8 +116,10 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="artistNameLabel" destination="P9b-eb-w1w" id="sqP-8N-QBw"/>
                         <outlet property="infoLabel" destination="X31-bf-YeV" id="5iN-cJ-8zT"/>
                         <outlet property="playButton" destination="ADB-b7-fsF" id="knx-8n-NEz"/>
+                        <outlet property="songTitleLabel" destination="3kM-2x-Hxw" id="WGt-da-ld0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hkk-cc-WJL" userLabel="First Responder" sceneMemberID="firstResponder"/>
