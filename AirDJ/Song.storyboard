@@ -4,6 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Panton-Regular.otf">
@@ -31,6 +32,12 @@
                                 <rect key="frame" x="26" y="261" width="278" height="46"/>
                                 <fontDescription key="fontDescription" name="Panton-Regular" family="Panton" pointSize="38"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Katy Perry" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="P9b-eb-w1w" userLabel="Song Artist Label">
+                                <rect key="frame" x="26" y="311" width="278" height="23"/>
+                                <fontDescription key="fontDescription" name="Panton-Regular" family="Panton" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="0.75266575168918914" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ADB-b7-fsF">
@@ -74,35 +81,56 @@
                                     <action selector="backButtonClicked:" destination="RHr-9u-8NH" eventType="touchUpInside" id="VVw-sw-mbj"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Katy Perry" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="P9b-eb-w1w" userLabel="Song Artist Label">
-                                <rect key="frame" x="26" y="311" width="278" height="23"/>
-                                <fontDescription key="fontDescription" name="Panton-Regular" family="Panton" pointSize="19"/>
-                                <color key="textColor" white="1" alpha="0.75266575168918914" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ws0-SJ-eTg">
+                                <rect key="frame" x="200" y="406" width="50" height="50"/>
+                                <state key="normal" image="Fast Forward Filled"/>
+                                <connections>
+                                    <action selector="forwardButtonClicked:" destination="RHr-9u-8NH" eventType="touchUpInside" id="rfs-Sn-IK9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyB-nt-tVF">
+                                <rect key="frame" x="70" y="406" width="50" height="50"/>
+                                <state key="normal" image="Rewind Filled"/>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yge-52-9ed">
+                                <rect key="frame" x="32" y="476" width="256" height="2"/>
+                                <color key="progressTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="trackTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ws0-SJ-eTg" firstAttribute="centerY" secondItem="ADB-b7-fsF" secondAttribute="centerY" id="6Lh-6k-K5C"/>
                             <constraint firstAttribute="trailing" secondItem="IjK-ZM-SXf" secondAttribute="trailing" id="7QQ-HW-j0j"/>
                             <constraint firstItem="Nwf-eX-HdF" firstAttribute="top" secondItem="ZUR-Br-OgA" secondAttribute="bottom" id="9mR-cV-ivp"/>
                             <constraint firstItem="IjK-ZM-SXf" firstAttribute="top" secondItem="9ag-PD-K2v" secondAttribute="top" id="C2d-5o-VJe"/>
+                            <constraint firstItem="ws0-SJ-eTg" firstAttribute="leading" secondItem="ADB-b7-fsF" secondAttribute="trailing" constant="15" id="GiM-JN-nAm"/>
                             <constraint firstItem="IjK-ZM-SXf" firstAttribute="leading" secondItem="3kM-2x-Hxw" secondAttribute="trailing" constant="-160" id="Ir1-A1-Uve"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3kM-2x-Hxw" secondAttribute="trailing" id="JBj-pI-Mnd"/>
                             <constraint firstItem="3kM-2x-Hxw" firstAttribute="leading" secondItem="P9b-eb-w1w" secondAttribute="leading" id="NyV-Or-zY8"/>
+                            <constraint firstItem="yge-52-9ed" firstAttribute="centerX" secondItem="9ag-PD-K2v" secondAttribute="centerX" id="OD4-ni-3jP"/>
                             <constraint firstItem="3kM-2x-Hxw" firstAttribute="centerY" secondItem="IjK-ZM-SXf" secondAttribute="centerY" id="Q01-mL-cRM"/>
+                            <constraint firstItem="ws0-SJ-eTg" firstAttribute="width" secondItem="ADB-b7-fsF" secondAttribute="width" id="Wci-ff-pxn"/>
                             <constraint firstItem="Nwf-eX-HdF" firstAttribute="leading" secondItem="9ag-PD-K2v" secondAttribute="leadingMargin" id="YFj-wd-3YJ"/>
+                            <constraint firstItem="yge-52-9ed" firstAttribute="top" secondItem="fyB-nt-tVF" secondAttribute="bottom" constant="20" id="bTw-PF-9pm"/>
                             <constraint firstItem="LmF-Rj-kAZ" firstAttribute="bottom" secondItem="2Md-6Y-eO2" secondAttribute="top" id="epa-bM-Mnl"/>
+                            <constraint firstItem="fyB-nt-tVF" firstAttribute="width" secondItem="ADB-b7-fsF" secondAttribute="width" id="eyR-PU-Bg1"/>
+                            <constraint firstItem="fyB-nt-tVF" firstAttribute="centerY" secondItem="ADB-b7-fsF" secondAttribute="centerY" id="gDm-ox-fi1"/>
                             <constraint firstItem="ADB-b7-fsF" firstAttribute="top" secondItem="IjK-ZM-SXf" secondAttribute="bottom" constant="-162" id="hgK-dd-Sbj"/>
                             <constraint firstItem="ADB-b7-fsF" firstAttribute="centerX" secondItem="IjK-ZM-SXf" secondAttribute="centerX" id="jzT-zB-kB4"/>
                             <constraint firstItem="IjK-ZM-SXf" firstAttribute="bottom" secondItem="2Md-6Y-eO2" secondAttribute="top" id="mWo-Se-Bnw"/>
                             <constraint firstItem="IjK-ZM-SXf" firstAttribute="leading" secondItem="3kM-2x-Hxw" secondAttribute="trailing" constant="-138" id="nzf-Oi-yGC"/>
                             <constraint firstItem="IjK-ZM-SXf" firstAttribute="leading" secondItem="3kM-2x-Hxw" secondAttribute="trailing" constant="-138" id="oNb-iT-ONU"/>
+                            <constraint firstItem="ADB-b7-fsF" firstAttribute="leading" secondItem="fyB-nt-tVF" secondAttribute="trailing" constant="15" id="poI-cA-Z89"/>
                             <constraint firstItem="P9b-eb-w1w" firstAttribute="top" secondItem="3kM-2x-Hxw" secondAttribute="bottom" constant="4" id="qVY-o1-rKh"/>
                             <constraint firstItem="IjK-ZM-SXf" firstAttribute="leading" secondItem="9ag-PD-K2v" secondAttribute="leading" id="rLh-eP-6Lp"/>
+                            <constraint firstItem="yge-52-9ed" firstAttribute="width" secondItem="9ag-PD-K2v" secondAttribute="width" multiplier="0.8" id="rnj-d4-QSj"/>
                             <constraint firstItem="LmF-Rj-kAZ" firstAttribute="trailing" secondItem="IjK-ZM-SXf" secondAttribute="trailing" id="ufP-Ad-nqi"/>
                             <constraint firstItem="3kM-2x-Hxw" firstAttribute="leading" secondItem="9ag-PD-K2v" secondAttribute="leadingMargin" constant="10" id="umY-hW-8M3"/>
+                            <constraint firstItem="fyB-nt-tVF" firstAttribute="height" secondItem="ADB-b7-fsF" secondAttribute="height" id="vjD-hs-cpQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="P9b-eb-w1w" secondAttribute="trailing" id="xSW-VV-3WA"/>
                             <constraint firstItem="LmF-Rj-kAZ" firstAttribute="leading" secondItem="IjK-ZM-SXf" secondAttribute="leading" id="zNR-hE-04U"/>
+                            <constraint firstItem="ws0-SJ-eTg" firstAttribute="height" secondItem="ADB-b7-fsF" secondAttribute="height" id="zgp-Pv-hFZ"/>
                             <constraint firstItem="LmF-Rj-kAZ" firstAttribute="top" secondItem="ADB-b7-fsF" secondAttribute="bottom" constant="54" id="zxh-4e-BXi"/>
                         </constraints>
                         <variation key="default">
@@ -117,8 +145,12 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="artistNameLabel" destination="P9b-eb-w1w" id="sqP-8N-QBw"/>
+                        <outlet property="backwardButton" destination="fyB-nt-tVF" id="ZVp-g1-b99"/>
+                        <outlet property="forwardButton" destination="ws0-SJ-eTg" id="Ffk-ro-DbS"/>
                         <outlet property="infoLabel" destination="X31-bf-YeV" id="5iN-cJ-8zT"/>
                         <outlet property="playButton" destination="ADB-b7-fsF" id="knx-8n-NEz"/>
+                        <outlet property="progressView" destination="yge-52-9ed" id="Vxl-hc-kDg"/>
+                        <outlet property="rewindButtonClicked" destination="fyB-nt-tVF" id="UOL-w2-YIf"/>
                         <outlet property="songTitleLabel" destination="3kM-2x-Hxw" id="WGt-da-ld0"/>
                     </connections>
                 </viewController>
@@ -128,8 +160,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Fast Forward Filled" width="50" height="50"/>
         <image name="GradientBackground" width="491" height="497"/>
         <image name="Pause" width="50" height="50"/>
+        <image name="Rewind Filled" width="50" height="50"/>
         <image name="WhiteBackButton" width="50" height="50"/>
     </resources>
 </document>

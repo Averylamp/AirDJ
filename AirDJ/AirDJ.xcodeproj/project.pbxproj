@@ -359,7 +359,7 @@
 				ORGANIZATIONNAME = imect;
 				TargetAttributes = {
 					1B85C533189E6F20006D6C3C = {
-						DevelopmentTeam = 75SQ2PVCQ8;
+						DevelopmentTeam = 9XWYL3K4YT;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;

@@ -119,7 +119,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if selectedIndex != nil {
-            
+            superPoweredMusic?.toggle()
+            superPoweredMusic = nil
             print("Song already picked")
         }
         selectedIndex = indexPath

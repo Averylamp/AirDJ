@@ -17,6 +17,8 @@
 - (bool)toggleFx:(int)index; // Enable/disable fx.
 - (void)getFrequencies:(NSMutableArray *)freqs;
 -(void)playSongWithUrl:(NSURL *)url;
+-(float)positionPercent;
+-(void)dealloc;
 @property NSMutableArray *frequenciesArr;
 @property int speakerValue;
 @property	int bpm;

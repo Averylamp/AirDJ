@@ -60,6 +60,10 @@
     if (!tracking && (slider.value != player->positionPercent)) slider.value = player->positionPercent;
 }
 
+-(float)positionPercent {
+    return player->positionPercent;
+}
+
 - (bool)toggleFx:(int)index {
     if (index == TIMEPITCHINDEX) {
         bool enabled = (player->tempo != 1.0f);
@@ -85,7 +89,15 @@
 }
 
 - (void)toggle {
-    if (started) [output stop]; else [output start];
+    if (started) {
+        [output stop];
+        delete player;
+        delete mixer;
+        for (int n = 2; n < NUMFXUNITS; n++) delete effects[n];
+        free(stereoBuffer);
+    }else {
+     [output start];
+    }
     started = !started;
 }
 

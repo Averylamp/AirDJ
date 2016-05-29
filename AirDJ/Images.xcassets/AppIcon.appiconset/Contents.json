@@ -3,31 +3,31 @@
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "App_icon29x29.png",
+      "filename" : "AirDJLaunchImage-6.png",
       "scale" : "1x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "App_icon58x58.png",
+      "filename" : "AirDJLaunchImage-5.png",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "App_icon87x87.png",
+      "filename" : "AirDJLaunchImage-3.png",
       "scale" : "3x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "App_icon80x80.png",
+      "filename" : "AirDJLaunchImage-4.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "App_icon120x120-1.png",
+      "filename" : "AirDJLaunchImage-2.png",
       "scale" : "3x"
     },
     {
@@ -43,13 +43,13 @@
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "App_icon120x120.png",
+      "filename" : "AirDJLaunchImage-1.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "App_icon180x180.png",
+      "filename" : "AirDJLaunchImage.png",
       "scale" : "3x"
     },
     {

@@ -13,8 +13,11 @@ class SongViewController: UIViewController {
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var infoLabel: UILabel!
     
+    @IBOutlet weak var backwardButton: UIButton!
+    @IBOutlet weak var forwardButton: UIButton!
     @IBOutlet weak var songTitleLabel: UILabel!
     @IBOutlet weak var artistNameLabel: UILabel!
+    @IBOutlet weak var progressView: UIProgressView!
     
     var musicIsPlaying = true
     var armString = ""
@@ -23,8 +26,12 @@ class SongViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        progressView.trackTintColor = UIColor(white: 0.7, alpha: 0.4)
         
-        TLMHub.sharedHub().lockingPolicy = TLMLockingPolicy.None
+        forwardButton.setImage(UIImage(named: "Fast Forward"), forState: .Highlighted)
+        backwardButton.setImage(UIImage(named: "Rewind"), forState: .Highlighted)
+        
+        TLMHub.sharedHub().lockingPolicy = .None
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didConnectDevice), name: TLMHubDidConnectDeviceNotification, object: nil)
         
@@ -40,9 +47,9 @@ class SongViewController: UIViewController {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didReceivePoseChange), name: TLMMyoDidReceivePoseChangedNotification, object: nil)
 
-        let displayLink = CADisplayLink(target: self, selector: #selector(SongViewController.frameUpdate))
-        displayLink.frameInterval = 3
-        displayLink.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSRunLoopCommonModes)
+         displayLink = CADisplayLink(target: self, selector: #selector(SongViewController.frameUpdate))
+        displayLink!.frameInterval = 3
+        displayLink!.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSRunLoopCommonModes)
         
         let numberOfLines = 20
         for i in 0...numberOfLines {
@@ -56,10 +63,8 @@ class SongViewController: UIViewController {
             self.view.layer.addSublayer(waveform)
         }
 
-        
-
     }
-    
+    var displayLink: CADisplayLink? = nil
     var waveforms = Array<CAShapeLayer>()
     
     func didConnectDevice (notif: NSNotification) {
@@ -107,6 +112,8 @@ class SongViewController: UIViewController {
     
     @IBAction func backButtonClicked(sender: AnyObject) {
         superPowered = nil
+        displayLink?.invalidate()
+        displayLink = nil
         self.navigationController?.popViewControllerAnimated(true)
     }
     
@@ -135,6 +142,9 @@ class SongViewController: UIViewController {
         }
 
     }
+    
+    //MARK: - Play Functions
+    
     @IBAction func playButtonTapped(sender: AnyObject) {
 //        if superPowered == nil{
 //            superPowered = Superpowered()
@@ -151,13 +161,16 @@ class SongViewController: UIViewController {
         }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func forwardButtonClicked(sender: AnyObject) {
+        
     }
     
     
+    @IBOutlet weak var rewindButtonClicked: UIButton!
+    
     func frameUpdate(){
+        
+        progressView.progress = superPowered!.positionPercent()
         
         superPowered?.getFrequencies(NSMutableArray(array: [55, 65,77,92, 110,131, 155,184, 220,262, 311,370, 440,523, 622,740, 880,951, 1244,1479, 1760, 2093, 2489, 2960, 3520, 4186, 4978, 5920, 7040, 8372, 9956, 11840]))
         let frequencies =  superPowered?.frequenciesArr
@@ -200,6 +213,8 @@ class SongViewController: UIViewController {
             
         }
     }
+    
+    
     
         /*
      // MARK: - Navigation
