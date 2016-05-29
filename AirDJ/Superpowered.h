@@ -12,7 +12,7 @@
 
 - (void)togglePlayback; // Play/pause.
 - (void)seekTo:(float)percent; // Jump to a specific position.
-
+-(void) addSongWithName:(NSString*)songName fileType:(NSString*) type;
 - (void)toggle; // Start/stop Superpowered.
 - (bool)toggleFx:(int)index; // Enable/disable fx.
 - (void)getFrequencies:(NSMutableArray *)freqs;

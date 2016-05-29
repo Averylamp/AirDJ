@@ -76,7 +76,7 @@
     };
 }
 
-- (void)togglePlayback { // Play/pause.
+- (void)togglePlayback { // Play/pause. 
     player->togglePlayback();
 }
 
@@ -96,19 +96,23 @@
 - (id)init {
     self = [super init];
     if (!self) return nil;
-    SuperpoweredFFTTest();
+    return self;
+}
 
+-(void) addSongWithName: (NSString*)songName fileType:(NSString*) type{
+    SuperpoweredFFTTest();
+    
     started = false;
     lastPositionSeconds = lastSamplerate = samplesProcessed = timeUnitsProcessed = maxTime = avgUnitsPerSecond = maxUnitsPerSecond = 0;
     if (posix_memalign((void **)&stereoBuffer, 16, 4096 + 128) != 0) abort(); // Allocating memory, aligned to 16.
-
-// Create the Superpowered units we'll use.
+    
+    // Create the Superpowered units we'll use.
     player = new SuperpoweredAdvancedAudioPlayer(NULL, NULL, 44100, 0);
-    player->open([[[NSBundle mainBundle] pathForResource:@"LevelsEdit" ofType:@"mp3"] fileSystemRepresentation]);
+    player->open([[[NSBundle mainBundle] pathForResource:songName ofType:type] fileSystemRepresentation]);
     player->play(false);
     player->setBpm(124.0f);
-	self.bpm = player->currentBpm;
-	
+    self.bpm = player->currentBpm;
+    
     SuperpoweredFilter *filter = new SuperpoweredFilter(SuperpoweredFilter_Resonant_Lowpass, 44100);
     filter->setResonantParameters(1000.0f, 0.1f);
     effects[FILTERINDEX] = filter;
@@ -137,12 +141,10 @@
     float widths[16] = { 1, 1, 1, 1, 1, 1, 1, 1,1, 1, 1, 1, 1, 1, 1, 1 };
     filters = new SuperpoweredBandpassFilterbank(16, frequencies, widths, 44100);
     
-    
-    
-    
     output = [[SuperpoweredIOSAudioOutput alloc] initWithDelegate:(id<SuperpoweredIOSAudioIODelegate>)self preferredBufferSize:12 preferredMinimumSamplerate:44100 audioSessionCategory:AVAudioSessionCategoryPlayback multiChannels:2 fixReceiver:true];
-    return self;
+    
 }
+
 -(void)playSongWithUrl:(NSURL *)url{
     NSData *temp = [NSData dataWithContentsOfURL:url];
     NSLog(@"Data - %@",temp);
@@ -228,7 +230,6 @@
         
         for (int n = 0; n < 16; n++){
             [self.frequenciesArr addObject:[freqs objectAtIndex:n]];
-            
         }
         
         memset(bands, 0, 16 * sizeof(float));

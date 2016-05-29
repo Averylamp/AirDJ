@@ -30,6 +30,7 @@
 		BB5D7B301A901355003B839E /* 03 Don't Trust Me.m4a in Resources */ = {isa = PBXBuildFile; fileRef = BB5D7B2F1A901355003B839E /* 03 Don't Trust Me.m4a */; };
 		BB5D7B361A90191D003B839E /* 13 Sandstorm.m4a in Resources */ = {isa = PBXBuildFile; fileRef = BB5D7B351A90191D003B839E /* 13 Sandstorm.m4a */; };
 		BB5D7B3B1A903DF9003B839E /* RWGameData.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5D7B3A1A903DF9003B839E /* RWGameData.m */; };
+		BB62733A1CFA85A30087FAEC /* UIBezierPath+LxThroughPointsBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6273391CFA85A30087FAEC /* UIBezierPath+LxThroughPointsBezier.swift */; };
 		BB7FE58D1CFA33120092A164 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7FE58C1CFA33120092A164 /* SettingsViewController.swift */; };
 		BB7FE58F1CFA389D0092A164 /* SongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7FE58E1CFA389D0092A164 /* SongTableViewCell.swift */; };
 		BBA4D21B1BAE9BEA004E4292 /* B.o.B - Airplanes, Part II [feat Eminem & Hayley Williams of Paramore] - Explicit Album Version.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BBA4D21A1BAE9BEA004E4292 /* B.o.B - Airplanes, Part II [feat Eminem & Hayley Williams of Paramore] - Explicit Album Version.mp3 */; };
@@ -101,6 +102,7 @@
 		BB5D7B351A90191D003B839E /* 13 Sandstorm.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "13 Sandstorm.m4a"; sourceTree = "<group>"; };
 		BB5D7B391A903DF9003B839E /* RWGameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWGameData.h; sourceTree = "<group>"; };
 		BB5D7B3A1A903DF9003B839E /* RWGameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWGameData.m; sourceTree = "<group>"; };
+		BB6273391CFA85A30087FAEC /* UIBezierPath+LxThroughPointsBezier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBezierPath+LxThroughPointsBezier.swift"; sourceTree = "<group>"; };
 		BB7FE58C1CFA33120092A164 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		BB7FE58E1CFA389D0092A164 /* SongTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongTableViewCell.swift; sourceTree = "<group>"; };
 		BBA4D21A1BAE9BEA004E4292 /* B.o.B - Airplanes, Part II [feat Eminem & Hayley Williams of Paramore] - Explicit Album Version.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "B.o.B - Airplanes, Part II [feat Eminem & Hayley Williams of Paramore] - Explicit Album Version.mp3"; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				BB7FE58C1CFA33120092A164 /* SettingsViewController.swift */,
 				BB5D7B391A903DF9003B839E /* RWGameData.h */,
 				BB5D7B3A1A903DF9003B839E /* RWGameData.m */,
+				BB6273391CFA85A30087FAEC /* UIBezierPath+LxThroughPointsBezier.swift */,
 				BBD1DB231CFA266500648559 /* Fonts */,
 				1B0377ED1A7ABE250094A776 /* Images.xcassets */,
 				1B85C536189E6F20006D6C3C /* Frameworks */,
@@ -402,6 +405,7 @@
 				1B56C2251A7AC21200A649D2 /* main.m in Sources */,
 				BB7FE58F1CFA389D0092A164 /* SongTableViewCell.swift in Sources */,
 				2BF862931CFA3F5F00A6D39E /* SongViewController.swift in Sources */,
+				BB62733A1CFA85A30087FAEC /* UIBezierPath+LxThroughPointsBezier.swift in Sources */,
 				1B0377E41A7ABDFB0094A776 /* AppDelegate.m in Sources */,
 				BB7FE58D1CFA33120092A164 /* SettingsViewController.swift in Sources */,
 			);
@@ -512,7 +516,7 @@
 				GCC_PREFIX_HEADER = "SuperpoweredPerformance-Prefix.pch";
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				INFOPLIST_FILE = "SuperpoweredPerformance-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -549,7 +553,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "SuperpoweredPerformance-Prefix.pch";
 				INFOPLIST_FILE = "SuperpoweredPerformance-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

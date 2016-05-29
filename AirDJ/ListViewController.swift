@@ -14,6 +14,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var settingsButton: UIButton!
     
+    var superPoweredMusic: Superpowered? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addSongButton.layer.cornerRadius = addSongButton.frame.height / 2
@@ -25,7 +27,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.backgroundColor = nil
         tableView.separatorStyle = .None
         
-
         // Do any additional setup after loading the view.
     }
 
@@ -81,19 +82,34 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if superPoweredMusic == nil {
+            superPoweredMusic = Superpowered()
+            superPoweredMusic?.addSongWithName("LevelsEdit", fileType: "mp3")
+            superPoweredMusic?.toggle()
+        }
+        
         let storyboard = UIStoryboard(name: "Song", bundle: nil)
-        let vc = storyboard.instantiateInitialViewController()
-        self.navigationController?.pushViewController(vc!, animated: true)
+        let vc = storyboard.instantiateInitialViewController() as!SongViewController
+        vc.superPowered = self.superPoweredMusic
+        self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    
 
-    /*
+    // MARK: - Waveform
+    
+    
+    
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+//        if let songVC = segue.destinationViewController as? SongViewController{
+//            songVC.superPowered = self.superPoweredMusic
+//        }
     }
-    */
+ 
 
 }

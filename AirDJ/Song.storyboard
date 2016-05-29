@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RHr-9u-8NH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RHr-9u-8NH">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Panton-Regular.otf">
@@ -72,14 +72,27 @@
                                     <constraint firstItem="X31-bf-YeV" firstAttribute="centerX" secondItem="LmF-Rj-kAZ" secondAttribute="centerX" id="G3W-IR-dUg"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nwf-eX-HdF">
+                                <rect key="frame" x="16" y="20" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8X5-LG-vqa"/>
+                                    <constraint firstAttribute="width" constant="30" id="8yt-tK-wWl"/>
+                                </constraints>
+                                <state key="normal" image="WhiteBackButton"/>
+                                <connections>
+                                    <action selector="backButtonClicked:" destination="RHr-9u-8NH" eventType="touchUpInside" id="VVw-sw-mbj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="IjK-ZM-SXf" secondAttribute="trailing" id="7QQ-HW-j0j"/>
+                            <constraint firstItem="Nwf-eX-HdF" firstAttribute="top" secondItem="ZUR-Br-OgA" secondAttribute="bottom" id="9mR-cV-ivp"/>
                             <constraint firstItem="IjK-ZM-SXf" firstAttribute="top" secondItem="9ag-PD-K2v" secondAttribute="top" id="C2d-5o-VJe"/>
                             <constraint firstItem="IjK-ZM-SXf" firstAttribute="leading" secondItem="3kM-2x-Hxw" secondAttribute="trailing" constant="-160" id="Ir1-A1-Uve"/>
                             <constraint firstItem="3kM-2x-Hxw" firstAttribute="leading" secondItem="P9b-eb-w1w" secondAttribute="leading" id="NyV-Or-zY8"/>
                             <constraint firstItem="3kM-2x-Hxw" firstAttribute="centerY" secondItem="IjK-ZM-SXf" secondAttribute="centerY" id="Q01-mL-cRM"/>
+                            <constraint firstItem="Nwf-eX-HdF" firstAttribute="leading" secondItem="9ag-PD-K2v" secondAttribute="leadingMargin" id="YFj-wd-3YJ"/>
                             <constraint firstItem="LmF-Rj-kAZ" firstAttribute="bottom" secondItem="2Md-6Y-eO2" secondAttribute="top" id="epa-bM-Mnl"/>
                             <constraint firstItem="ADB-b7-fsF" firstAttribute="top" secondItem="IjK-ZM-SXf" secondAttribute="bottom" constant="-162" id="hgK-dd-Sbj"/>
                             <constraint firstItem="ADB-b7-fsF" firstAttribute="centerX" secondItem="IjK-ZM-SXf" secondAttribute="centerX" id="jzT-zB-kB4"/>
@@ -114,5 +127,6 @@
     <resources>
         <image name="GradientBackground" width="491" height="497"/>
         <image name="Pause" width="50" height="50"/>
+        <image name="WhiteBackButton" width="50" height="50"/>
     </resources>
 </document>
