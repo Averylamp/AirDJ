@@ -176,8 +176,8 @@ class SongViewController: UIViewController {
                 currentPoseString = "Rest"
                 break;
             case .DoubleTap:
-                flangerTriggered(UIView())
                 currentPoseString = "DoubleTap"
+                loopTriggered(UIView())
                 break;
             case .Fist:
                 currentPoseString = "Fist"
@@ -185,14 +185,14 @@ class SongViewController: UIViewController {
                 break;
             case .WaveIn:
                 currentPoseString = "WaveIn"
-                rewindButtonClicked(UIButton)
+                phaserTriggered(UIView())
                 break;
             case .WaveOut:
                 currentPoseString = "WaveOut"
                 forwardButtonClicked(UIButton)
                 break;
             case .FingersSpread:
-                loopTriggered(UIView())
+                flangerTriggered(UIView())
                 currentPoseString = "Spread"
                 break;
         }
