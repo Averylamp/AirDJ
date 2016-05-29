@@ -30,6 +30,8 @@ class SongViewController: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didReceiveOrientationEvent), name: TLMMyoDidReceiveOrientationEventNotification, object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didReceiveAccelerometerEvent), name: TLMMyoDidReceiveAccelerometerEventNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didReceivePoseChange), name: TLMMyoDidReceivePoseChangedNotification, object: nil)
+
         let displayLink = CADisplayLink(target: self, selector: #selector(SongViewController.frameUpdate))
         displayLink.frameInterval = 3
         displayLink.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSRunLoopCommonModes)
@@ -37,22 +39,23 @@ class SongViewController: UIViewController {
         waveform1.geometryFlipped = true
         waveform2.geometryFlipped = true
         waveform3.geometryFlipped = true
-        waveform1.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height / 2)
+        waveform1.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height / 3)
         waveform1.strokeColor = UIColor(white: 1.0, alpha: 1.0).CGColor
         waveform1.lineWidth = 2
         waveform1.fillColor = nil
         self.view.layer.addSublayer(waveform1)
-        waveform2.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height / 2)
+        waveform2.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height / 3)
         waveform2.strokeColor = UIColor(white: 1.0, alpha: 0.6).CGColor
         waveform2.lineWidth = 2
         waveform2.fillColor = nil
         self.view.layer.addSublayer(waveform2)
-        waveform3.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height / 2)
+        waveform3.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height / 3)
         waveform3.strokeColor = UIColor(white: 1.0, alpha: 0.2).CGColor
         waveform3.lineWidth = 2
         waveform3.fillColor = nil
         self.view.layer.addSublayer(waveform3)
         
+
     }
     var waveform1 = CAShapeLayer()
     var waveform2 = CAShapeLayer()
@@ -82,6 +85,8 @@ class SongViewController: UIViewController {
     
     func didReceiveAccelerometerEvent (notif: NSNotification) {
         let accelerometerEvent = notif.userInfo![kTLMKeyAccelerometerEvent] as! TLMAccelerometerEvent
+        let vector = accelerometerEvent.vector
+        infoLabel.text = "x: \(vector.x), y: \(vector.y), z: \(vector.z)"
     }
     
     var superPowered: Superpowered? = nil
@@ -89,6 +94,25 @@ class SongViewController: UIViewController {
     @IBAction func backButtonClicked(sender: AnyObject) {
         superPowered = nil
         self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    func didReceivePoseChange (notif: NSNotification) {
+        let pose = notif.userInfo![kTLMKeyPose] as! TLMPose
+        switch (pose.type) {
+            case .Unknown, .Rest:
+                break;
+            case .DoubleTap:
+                break;
+            case .Fist:
+                break;
+            case .WaveIn:
+                break;
+            case .WaveOut:
+                break;
+            case .FingersSpread:
+                break;
+        }
+
     }
     @IBAction func playButtonTapped(sender: AnyObject) {
 //        if superPowered == nil{
@@ -129,16 +153,15 @@ class SongViewController: UIViewController {
         for i in 0..<scaledFrequencies.count{
             allPoints.append(CGPointMake(self.view.frame.width * CGFloat(i) / CGFloat(scaledFrequencies.count - 1), CGFloat(scaledFrequencies[i])))
         }
-        print(allPoints)
         
         var secondPoints = Array<CGPoint>()
         for i in 0..<allPoints.count{
-            secondPoints.append(CGPointMake(self.view.frame.width * CGFloat(i) / CGFloat(scaledFrequencies.count - 1), CGFloat(scaledFrequencies[i] * 0.8)))
+            secondPoints.append(CGPointMake(self.view.frame.width * CGFloat(i) / CGFloat(scaledFrequencies.count - 1), CGFloat(scaledFrequencies[i] * 0.7)))
         }
         
         var thirdPoints = Array<CGPoint>()
         for i in 0..<allPoints.count{
-            thirdPoints.append(CGPointMake(self.view.frame.width * CGFloat(i) / CGFloat(scaledFrequencies.count - 1), CGFloat(scaledFrequencies[i] * 0.6)))
+            thirdPoints.append(CGPointMake(self.view.frame.width * CGFloat(i) / CGFloat(scaledFrequencies.count - 1), CGFloat(scaledFrequencies[i] * 0.4)))
         }
         
         let endPath = UIBezierPath()
