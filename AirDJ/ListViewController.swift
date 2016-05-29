@@ -29,6 +29,19 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        if selectedIndex != nil {
+            let cell = tableView.cellForRowAtIndexPath(selectedIndex!) as! SongTableViewCell
+            if cell.selected == true && superPoweredMusic!.isPlaying(){
+                cell.playbackIndicator?.state = .Playing
+            }else{
+                cell.playbackIndicator?.state = .Paused
+            }
+        }
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

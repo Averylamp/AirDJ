@@ -11,6 +11,7 @@
 - (void)updatePlayerLabel:(UILabel *)label slider:(UISlider *)slider button:(UIButton *)button;
 
 - (void)togglePlayback; // Play/pause.
+-(bool)isPlaying;
 - (void)seekTo:(float)percent; // Jump to a specific position.
 -(void) addSongWithName:(NSString*)songName fileType:(NSString*) type;
 - (void)toggle; // Start/stop Superpowered.

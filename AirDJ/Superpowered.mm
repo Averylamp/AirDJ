@@ -80,8 +80,11 @@
     };
 }
 
-- (void)togglePlayback { // Play/pause. 
+- (void)togglePlayback { // Play/pause.
     player->togglePlayback();
+}
+-(bool)isPlaying{
+    return player->playing;
 }
 
 - (void)seekTo:(float)percent {

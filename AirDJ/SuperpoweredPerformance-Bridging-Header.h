@@ -4,4 +4,4 @@
 
 #import <MyoKit/MyoKit.h>
 #import "Superpowered.h"
-
+#import "NAKPlaybackIndicatorView.h"

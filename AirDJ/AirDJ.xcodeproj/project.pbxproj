@@ -28,6 +28,8 @@
 		BB1242C01A8FF19C0016B95C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB1242BE1A8FF19C0016B95C /* Main.storyboard */; };
 		BB249E7F1BD0C2DD00A9483D /* LevelsEdit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BB249E7E1BD0C2DD00A9483D /* LevelsEdit.mp3 */; };
 		BB2707B31CFAB7A300FDEF15 /* LaunchImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB2707B21CFAB7A300FDEF15 /* LaunchImage.storyboard */; };
+		BB2707BE1CFB112A00FDEF15 /* NAKPlaybackIndicatorContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2707BB1CFB112A00FDEF15 /* NAKPlaybackIndicatorContentView.m */; };
+		BB2707BF1CFB112A00FDEF15 /* NAKPlaybackIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2707BD1CFB112A00FDEF15 /* NAKPlaybackIndicatorView.m */; };
 		BB5D7B301A901355003B839E /* 03 Don't Trust Me.m4a in Resources */ = {isa = PBXBuildFile; fileRef = BB5D7B2F1A901355003B839E /* 03 Don't Trust Me.m4a */; };
 		BB5D7B361A90191D003B839E /* 13 Sandstorm.m4a in Resources */ = {isa = PBXBuildFile; fileRef = BB5D7B351A90191D003B839E /* 13 Sandstorm.m4a */; };
 		BB62733A1CFA85A30087FAEC /* UIBezierPath+LxThroughPointsBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6273391CFA85A30087FAEC /* UIBezierPath+LxThroughPointsBezier.swift */; };
@@ -105,6 +107,10 @@
 		BB1242BF1A8FF19C0016B95C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BB249E7E1BD0C2DD00A9483D /* LevelsEdit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LevelsEdit.mp3; sourceTree = "<group>"; };
 		BB2707B21CFAB7A300FDEF15 /* LaunchImage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchImage.storyboard; sourceTree = SOURCE_ROOT; };
+		BB2707BA1CFB112A00FDEF15 /* NAKPlaybackIndicatorContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAKPlaybackIndicatorContentView.h; sourceTree = "<group>"; };
+		BB2707BB1CFB112A00FDEF15 /* NAKPlaybackIndicatorContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAKPlaybackIndicatorContentView.m; sourceTree = "<group>"; };
+		BB2707BC1CFB112A00FDEF15 /* NAKPlaybackIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAKPlaybackIndicatorView.h; sourceTree = "<group>"; };
+		BB2707BD1CFB112A00FDEF15 /* NAKPlaybackIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAKPlaybackIndicatorView.m; sourceTree = "<group>"; };
 		BB3AC96E1A8FC61300B42614 /* SuperpoweredBandpassFilterbank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperpoweredBandpassFilterbank.h; sourceTree = "<group>"; };
 		BB5D7B2F1A901355003B839E /* 03 Don't Trust Me.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "03 Don't Trust Me.m4a"; sourceTree = "<group>"; };
 		BB5D7B351A90191D003B839E /* 13 Sandstorm.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "13 Sandstorm.m4a"; sourceTree = "<group>"; };
@@ -208,6 +214,10 @@
 				BBD1DAF01CFA244D00648559 /* ListViewController.swift */,
 				BB7FE58C1CFA33120092A164 /* SettingsViewController.swift */,
 				BB6273391CFA85A30087FAEC /* UIBezierPath+LxThroughPointsBezier.swift */,
+				BB2707BA1CFB112A00FDEF15 /* NAKPlaybackIndicatorContentView.h */,
+				BB2707BB1CFB112A00FDEF15 /* NAKPlaybackIndicatorContentView.m */,
+				BB2707BC1CFB112A00FDEF15 /* NAKPlaybackIndicatorView.h */,
+				BB2707BD1CFB112A00FDEF15 /* NAKPlaybackIndicatorView.m */,
 				BBD1DB231CFA266500648559 /* Fonts */,
 				1B0377ED1A7ABE250094A776 /* Images.xcassets */,
 				1B85C536189E6F20006D6C3C /* Frameworks */,
@@ -436,12 +446,14 @@
 				1B0377DF1A7ABDEA0094A776 /* SuperpoweredIOSAudioOutput.mm in Sources */,
 				1B0377EB1A7ABE100094A776 /* Superpowered.mm in Sources */,
 				1B0377EA1A7ABE100094A776 /* CoreAudio.m in Sources */,
+				BB2707BE1CFB112A00FDEF15 /* NAKPlaybackIndicatorContentView.m in Sources */,
 				BBD1DAF11CFA244D00648559 /* ListViewController.swift in Sources */,
 				1B56C2251A7AC21200A649D2 /* main.m in Sources */,
 				BB7FE58F1CFA389D0092A164 /* SongTableViewCell.swift in Sources */,
 				2BF862931CFA3F5F00A6D39E /* SongViewController.swift in Sources */,
 				BB62733A1CFA85A30087FAEC /* UIBezierPath+LxThroughPointsBezier.swift in Sources */,
 				1B0377E41A7ABDFB0094A776 /* AppDelegate.m in Sources */,
+				BB2707BF1CFB112A00FDEF15 /* NAKPlaybackIndicatorView.m in Sources */,
 				BB7FE58D1CFA33120092A164 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
