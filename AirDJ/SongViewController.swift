@@ -36,27 +36,23 @@ class SongViewController: UIViewController {
         displayLink.frameInterval = 3
         displayLink.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSRunLoopCommonModes)
         
-        waveform1.geometryFlipped = true
-        waveform2.geometryFlipped = true
-        waveform3.geometryFlipped = true
-        waveform1.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height / 3)
-        waveform1.strokeColor = UIColor(white: 1.0, alpha: 1.0).CGColor
-        waveform1.lineWidth = 2
-        waveform1.fillColor = nil
-        self.view.layer.addSublayer(waveform1)
-        waveform2.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height / 3)
-        waveform2.strokeColor = UIColor(white: 1.0, alpha: 0.6).CGColor
-        waveform2.lineWidth = 2
-        waveform2.fillColor = nil
-        self.view.layer.addSublayer(waveform2)
-        waveform3.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height / 3)
-        waveform3.strokeColor = UIColor(white: 1.0, alpha: 0.2).CGColor
-        waveform3.lineWidth = 2
-        waveform3.fillColor = nil
-        self.view.layer.addSublayer(waveform3)
+        let numberOfLines = 20
+        for i in 0...numberOfLines {
+            let waveform = CAShapeLayer()
+            waveforms.append(waveform)
+            waveform.geometryFlipped = true
+            waveform.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height / 3)
+            waveform.strokeColor = UIColor(white: 1.0, alpha:  (CGFloat(Double(i ) *  0.5 / Double(numberOfLines)))).CGColor
+            waveform.lineWidth = 2
+            waveform.fillColor = nil
+            self.view.layer.addSublayer(waveform)
+        }
+
         
 
     }
+    
+    var waveforms = Array<CAShapeLayer>()
     var waveform1 = CAShapeLayer()
     var waveform2 = CAShapeLayer()
     var waveform3 = CAShapeLayer()
@@ -138,7 +134,7 @@ class SongViewController: UIViewController {
     
     func frameUpdate(){
         
-        superPowered?.getFrequencies(NSMutableArray(array: [55,77, 110,155, 220,311, 440, 622, 880,1244, 1760,2489, 3520,4978, 7040,9956]))
+        superPowered?.getFrequencies(NSMutableArray(array: [55, 65,77,92, 110,131, 155,184, 220,262, 311,370, 440,523, 622,740, 880,951, 1244,1479, 1760, 2093, 2489, 2960, 3520, 4186, 4978, 5920, 7040, 8372, 9956, 11840]))
         let frequencies =  superPowered?.frequenciesArr
         if frequencies == nil {
             return
@@ -154,52 +150,69 @@ class SongViewController: UIViewController {
             allPoints.append(CGPointMake(self.view.frame.width * CGFloat(i) / CGFloat(scaledFrequencies.count - 1), CGFloat(scaledFrequencies[i])))
         }
         
-        var secondPoints = Array<CGPoint>()
-        for i in 0..<allPoints.count{
-            secondPoints.append(CGPointMake(self.view.frame.width * CGFloat(i) / CGFloat(scaledFrequencies.count - 1), CGFloat(scaledFrequencies[i] * 0.7)))
+        var points = Array<Array<CGPoint>>()
+        for i in 0..<waveforms.count{
+            var pointArr = Array<CGPoint>()
+            for g in 0..<allPoints.count{
+                pointArr.append(CGPointMake(allPoints[g].x, allPoints[g].y * CGFloat(Double(i) / Double(waveforms.count - 1))))
+            }
+            points.append(pointArr)
         }
-        
-        var thirdPoints = Array<CGPoint>()
-        for i in 0..<allPoints.count{
-            thirdPoints.append(CGPointMake(self.view.frame.width * CGFloat(i) / CGFloat(scaledFrequencies.count - 1), CGFloat(scaledFrequencies[i] * 0.4)))
+//        
+//        var firstPoints = Array<CGPoint>()
+//        for i in 0..<allPoints.count{
+//            firstPoints.append(CGPointMake(self.view.frame.width * CGFloat(i) / CGFloat(allPoints.count - 1), CGFloat(scaledFrequencies[i ])))
+//        }
+//        
+//        var secondPoints = Array<CGPoint>()
+//        for i in 0...11{
+//            secondPoints.append(CGPointMake(self.view.frame.width * CGFloat(i) / CGFloat(5), CGFloat(scaledFrequencies[i + 10])))
+//        }
+//        
+//        var thirdPoints = Array<CGPoint>()
+//        for i in 0...11{
+//            thirdPoints.append(CGPointMake(self.view.frame.width * CGFloat(i) / CGFloat(5), CGFloat(scaledFrequencies[i + 20])))
+//        }
+//
+        for i in 0..<waveforms.count{
+            let endPath = UIBezierPath()
+            endPath.contractionFactor = 0.7
+            endPath.moveToPoint(points[i].first!)
+            endPath.addBezierThrough(points[i])
+            
+            
+            var animation = CABasicAnimation(keyPath: "path")
+            animation.fromValue = waveforms[i]
+            animation.toValue = endPath.CGPath
+            animation.duration = 3.0 / 60.0
+            waveforms[i].path = endPath.CGPath
+            waveforms[i].addAnimation(animation, forKey: "waveAnimation")
+            
         }
-        
-        let endPath = UIBezierPath()
-        endPath.contractionFactor = 0.7
-        endPath.moveToPoint(allPoints.first!)
-        endPath.addBezierThrough(allPoints)
-        
-        var animation = CABasicAnimation(keyPath: "path")
-        animation.fromValue = waveform1.path
-        animation.toValue = endPath.CGPath
-        animation.duration = 3.0 / 60.0
-        waveform1.path = endPath.CGPath
-        waveform1.addAnimation(animation, forKey: "waveAnimation")
 
-        let endPath2 = UIBezierPath()
-        endPath2.contractionFactor = 0.7
-        endPath2.moveToPoint(secondPoints.first!)
-        endPath2.addBezierThrough(secondPoints)
-        
-        animation = CABasicAnimation(keyPath: "path")
-        animation.fromValue = waveform2.path
-        animation.toValue = endPath2.CGPath
-        animation.duration = 3.0 / 60.0
-        waveform2.path = endPath2.CGPath
-        waveform2.addAnimation(animation, forKey: "waveAnimation")
-
-        
-        let endPath3 = UIBezierPath()
-        endPath3.contractionFactor = 0.7
-        endPath3.moveToPoint(thirdPoints.first!)
-        endPath3.addBezierThrough(thirdPoints)
-        
-        animation = CABasicAnimation(keyPath: "path")
-        animation.fromValue = waveform3.path
-        animation.toValue = endPath3.CGPath
-        animation.duration = 3.0 / 60.0
-        waveform3.path = endPath3.CGPath
-        waveform3.addAnimation(animation, forKey: "waveAnimation")
+//        let endPath2 = UIBezierPath()
+//        endPath2.contractionFactor = 0.7
+//        endPath2.moveToPoint(secondPoints.first!)
+//        endPath2.addBezierThrough(secondPoints)
+//        
+//        animation = CABasicAnimation(keyPath: "path")
+//        animation.fromValue = waveform2.path
+//        animation.toValue = endPath2.CGPath
+//        animation.duration = 3.0 / 60.0
+//        waveform2.path = endPath2.CGPath
+//        waveform2.addAnimation(animation, forKey: "waveAnimation")
+//        
+//        let endPath3 = UIBezierPath()
+//        endPath3.contractionFactor = 0.7
+//        endPath3.moveToPoint(thirdPoints.first!)
+//        endPath3.addBezierThrough(thirdPoints)
+//        
+//        animation = CABasicAnimation(keyPath: "path")
+//        animation.fromValue = waveform3.path
+//        animation.toValue = endPath3.CGPath
+//        animation.duration = 3.0 / 60.0
+//        waveform3.path = endPath3.CGPath
+//        waveform3.addAnimation(animation, forKey: "waveAnimation")
 
     }
     

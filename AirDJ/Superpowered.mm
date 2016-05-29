@@ -27,7 +27,7 @@
     bool started;
     uint64_t timeUnitsProcessed, maxTime;
     pthread_mutex_t mutex;
-    float bands[16];
+    float bands[32];
     unsigned int lastPositionSeconds, lastSamplerate, samplesProcessed,samplesProcessedForOneDisplayFrame;
 }
 
@@ -137,9 +137,9 @@
     
     mixer = new SuperpoweredStereoMixer();
     
-    float frequencies[16] = { 55,77, 110,155, 220,311, 440, 622, 880,1244, 1760,2489, 3520,4978, 7040,9956 };
-    float widths[16] = { 1, 1, 1, 1, 1, 1, 1, 1,1, 1, 1, 1, 1, 1, 1, 1 };
-    filters = new SuperpoweredBandpassFilterbank(16, frequencies, widths, 44100);
+    float frequencies[32] = { 55, 65,77,92, 110,131, 155,184, 220,262, 311,370, 440,523, 622,740, 880,951, 1244,1479, 1760, 2093, 2489, 2960, 3520, 4186, 4978, 5920, 7040, 8372, 9956, 11840 };
+    float widths[32] = { 1, 1, 1, 1, 1, 1, 1, 1,1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,1, 1, 1, 1, 1, 1, 1, 1 };
+    filters = new SuperpoweredBandpassFilterbank(32, frequencies, widths, 44100);
     
     output = [[SuperpoweredIOSAudioOutput alloc] initWithDelegate:(id<SuperpoweredIOSAudioIODelegate>)self preferredBufferSize:12 preferredMinimumSamplerate:44100 audioSessionCategory:AVAudioSessionCategoryPlayback multiChannels:2 fixReceiver:true];
     
@@ -223,16 +223,17 @@
 - (void)getFrequencies:(NSMutableArray *)freqs {
     pthread_mutex_lock(&mutex);
     if (samplesProcessedForOneDisplayFrame > 0) {
-        for (int n = 0; n < 16; n++) [freqs setObject:[NSNumber numberWithFloat: bands[n] / float(samplesProcessedForOneDisplayFrame) ] atIndexedSubscript:n];
+        for (int n = 0; n < 32; n++) [freqs setObject:[NSNumber numberWithFloat: bands[n] / float(samplesProcessedForOneDisplayFrame) ] atIndexedSubscript:n];
         
 
         self.frequenciesArr = [[NSMutableArray alloc]init];
         
-        for (int n = 0; n < 16; n++){
+        for (int n = 0; n < 32; n++){
             [self.frequenciesArr addObject:[freqs objectAtIndex:n]];
+            
         }
         
-        memset(bands, 0, 16 * sizeof(float));
+        memset(bands, 0, 32 * sizeof(float));
         samplesProcessedForOneDisplayFrame = 0;
     } else freqs = [[NSMutableArray alloc]initWithCapacity:16];
     pthread_mutex_unlock(&mutex);
