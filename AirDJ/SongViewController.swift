@@ -18,9 +18,13 @@ class SongViewController: UIViewController {
     
     var musicIsPlaying = true
     var armString = ""
+    var currentPose: TLMPose?
+    var currentPoseString = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        TLMHub.sharedHub().lockingPolicy = TLMLockingPolicy.None
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didConnectDevice), name: TLMHubDidConnectDeviceNotification, object: nil)
         
@@ -33,6 +37,7 @@ class SongViewController: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didReceiveOrientationEvent), name: TLMMyoDidReceiveOrientationEventNotification, object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didReceiveAccelerometerEvent), name: TLMMyoDidReceiveAccelerometerEventNotification, object: nil)
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didReceivePoseChange), name: TLMMyoDidReceivePoseChangedNotification, object: nil)
 
         let displayLink = CADisplayLink(target: self, selector: #selector(SongViewController.frameUpdate))
@@ -77,6 +82,15 @@ class SongViewController: UIViewController {
     
     func didReceiveOrientationEvent (notif: NSNotification) {
         let orientationEvent = notif.userInfo![kTLMKeyOrientationEvent] as! TLMOrientationEvent
+        let angles = TLMEulerAngles(quaternion: orientationEvent.quaternion)
+        
+        let r = round(angles.roll.degrees*10)/10
+        let p = round(angles.pitch.degrees*10)/10
+        let y = round(angles.yaw.degrees*10)/10
+        
+        if (currentPose != nil) {
+            infoLabel.text = "\(currentPoseString) \(p)"
+        }
     }
     
     func didReceiveAccelerometerEvent (notif: NSNotification) {
@@ -86,7 +100,7 @@ class SongViewController: UIViewController {
         let y = round(vector.y*1000)/1000
         let z = round(vector.z*1000)/1000
 //        infoLabel.text = "x: \(x), y: \(y), z: \(z)"
-        infoLabel.text = "\(y)"
+//        infoLabel.text = "\(y)"
     }
     
     var superPowered: Superpowered? = nil
@@ -98,18 +112,25 @@ class SongViewController: UIViewController {
     
     func didReceivePoseChange (notif: NSNotification) {
         let pose = notif.userInfo![kTLMKeyPose] as! TLMPose
+        currentPose = pose
         switch (pose.type) {
             case .Unknown, .Rest:
+                currentPoseString = "Rest"
                 break;
             case .DoubleTap:
+                currentPoseString = "DoubleTap"
                 break;
             case .Fist:
+                currentPoseString = "Fist"
                 break;
             case .WaveIn:
+                currentPoseString = "WaveIn"
                 break;
             case .WaveOut:
+                currentPoseString = "WaveOut"
                 break;
             case .FingersSpread:
+                currentPoseString = "Spread"
                 break;
         }
 
