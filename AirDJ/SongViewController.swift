@@ -82,7 +82,11 @@ class SongViewController: UIViewController {
     func didReceiveAccelerometerEvent (notif: NSNotification) {
         let accelerometerEvent = notif.userInfo![kTLMKeyAccelerometerEvent] as! TLMAccelerometerEvent
         let vector = accelerometerEvent.vector
-        infoLabel.text = "x: \(vector.x), y: \(vector.y), z: \(vector.z)"
+        let x = round(vector.x*1000)/1000
+        let y = round(vector.y*1000)/1000
+        let z = round(vector.z*1000)/1000
+//        infoLabel.text = "x: \(x), y: \(y), z: \(z)"
+        infoLabel.text = "\(y)"
     }
     
     var superPowered: Superpowered? = nil
