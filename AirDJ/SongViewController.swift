@@ -115,6 +115,9 @@ class SongViewController: UIViewController {
         infoLabel.text = "Perform the Sync Gesture"
     }
     
+    var isBelowPitchLowThreshold = false
+    var isAbovePitchLowThreshold = false
+    
     func didReceiveOrientationEvent (notif: NSNotification) {
         let orientationEvent = notif.userInfo![kTLMKeyOrientationEvent] as! TLMOrientationEvent
         let angles = TLMEulerAngles(quaternion: orientationEvent.quaternion)
@@ -123,8 +126,26 @@ class SongViewController: UIViewController {
         let p = round(angles.pitch.degrees*10)/10
         let y = round(angles.yaw.degrees*10)/10
         
+        if isBelowPitchLowThreshold == false && p <= -50 {
+            isBelowPitchLowThreshold = true
+            pitchShiftTriggered(UIView())
+        }else if isBelowPitchLowThreshold == true && p > -50 {
+            isBelowPitchLowThreshold = false
+            pitchShiftTriggered(UIView())
+        }
+        
+        if isAbovePitchLowThreshold == false && p >= 50 {
+            isAbovePitchLowThreshold = true
+            timeShiftTriggered(UIView())
+        }else if isAbovePitchLowThreshold == true && p < 50 {
+            isAbovePitchLowThreshold = false
+            timeShiftTriggered(UIView())
+        }
+        
+        print("Roll: \(r)  Pitch: \(p)  Yaw: \(y)")
         if (currentPose != nil) {
             infoLabel.text = "\(currentPoseString) \(p)"
+            
         }
     }
     
@@ -175,7 +196,7 @@ class SongViewController: UIViewController {
                 currentPoseString = "Spread"
                 break;
         }
-
+        print(currentPoseString)
     }
     
     //MARK: - Play Functions

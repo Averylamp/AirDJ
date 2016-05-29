@@ -30,7 +30,6 @@
 		BB2707B31CFAB7A300FDEF15 /* LaunchImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB2707B21CFAB7A300FDEF15 /* LaunchImage.storyboard */; };
 		BB5D7B301A901355003B839E /* 03 Don't Trust Me.m4a in Resources */ = {isa = PBXBuildFile; fileRef = BB5D7B2F1A901355003B839E /* 03 Don't Trust Me.m4a */; };
 		BB5D7B361A90191D003B839E /* 13 Sandstorm.m4a in Resources */ = {isa = PBXBuildFile; fileRef = BB5D7B351A90191D003B839E /* 13 Sandstorm.m4a */; };
-		BB5D7B3B1A903DF9003B839E /* RWGameData.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5D7B3A1A903DF9003B839E /* RWGameData.m */; };
 		BB62733A1CFA85A30087FAEC /* UIBezierPath+LxThroughPointsBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6273391CFA85A30087FAEC /* UIBezierPath+LxThroughPointsBezier.swift */; };
 		BB62733C1CFAAFB50087FAEC /* Falling.wav in Resources */ = {isa = PBXBuildFile; fileRef = BB62733B1CFAAFB50087FAEC /* Falling.wav */; };
 		BB62733E1CFAB06D0087FAEC /* Hundred Waters - Show Me Love (Big Wild Remix).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BB62733D1CFAB06D0087FAEC /* Hundred Waters - Show Me Love (Big Wild Remix).mp3 */; };
@@ -109,8 +108,6 @@
 		BB3AC96E1A8FC61300B42614 /* SuperpoweredBandpassFilterbank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperpoweredBandpassFilterbank.h; sourceTree = "<group>"; };
 		BB5D7B2F1A901355003B839E /* 03 Don't Trust Me.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "03 Don't Trust Me.m4a"; sourceTree = "<group>"; };
 		BB5D7B351A90191D003B839E /* 13 Sandstorm.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "13 Sandstorm.m4a"; sourceTree = "<group>"; };
-		BB5D7B391A903DF9003B839E /* RWGameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWGameData.h; sourceTree = "<group>"; };
-		BB5D7B3A1A903DF9003B839E /* RWGameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWGameData.m; sourceTree = "<group>"; };
 		BB6273391CFA85A30087FAEC /* UIBezierPath+LxThroughPointsBezier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBezierPath+LxThroughPointsBezier.swift"; sourceTree = "<group>"; };
 		BB62733B1CFAAFB50087FAEC /* Falling.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Falling.wav; sourceTree = "<group>"; };
 		BB62733D1CFAB06D0087FAEC /* Hundred Waters - Show Me Love (Big Wild Remix).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Hundred Waters - Show Me Love (Big Wild Remix).mp3"; sourceTree = "<group>"; };
@@ -210,8 +207,6 @@
 				2BF862921CFA3F5F00A6D39E /* SongViewController.swift */,
 				BBD1DAF01CFA244D00648559 /* ListViewController.swift */,
 				BB7FE58C1CFA33120092A164 /* SettingsViewController.swift */,
-				BB5D7B391A903DF9003B839E /* RWGameData.h */,
-				BB5D7B3A1A903DF9003B839E /* RWGameData.m */,
 				BB6273391CFA85A30087FAEC /* UIBezierPath+LxThroughPointsBezier.swift */,
 				BBD1DB231CFA266500648559 /* Fonts */,
 				1B0377ED1A7ABE250094A776 /* Images.xcassets */,
@@ -441,7 +436,6 @@
 				1B0377DF1A7ABDEA0094A776 /* SuperpoweredIOSAudioOutput.mm in Sources */,
 				1B0377EB1A7ABE100094A776 /* Superpowered.mm in Sources */,
 				1B0377EA1A7ABE100094A776 /* CoreAudio.m in Sources */,
-				BB5D7B3B1A903DF9003B839E /* RWGameData.m in Sources */,
 				BBD1DAF11CFA244D00648559 /* ListViewController.swift in Sources */,
 				1B56C2251A7AC21200A649D2 /* main.m in Sources */,
 				BB7FE58F1CFA389D0092A164 /* SongTableViewCell.swift in Sources */,
